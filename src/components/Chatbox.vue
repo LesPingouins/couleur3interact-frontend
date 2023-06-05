@@ -107,6 +107,7 @@ export default {
   },
   mounted() {
     this.startWebSocket();
+    this.messages.push("test", "tst", "test");
   },
 };
 </script>
