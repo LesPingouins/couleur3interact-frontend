@@ -1,58 +1,34 @@
 <template>
-  <nav
-    class="navbar navbar-expand-lg navbar-dark bg-dark"
-    aria-label="Main navigation"
-  >
-    <div class="container-fluid">
+  <div class="container mb-3">
+    <div class="row">
       <router-link
-        :to="{ name: 'Home' }"
-        class="navbar-brand d-flex align-items-center"
+        class="nav-item nav-link col-10"
+        :class="$route.name == 'Chat' ? 'active' : ''"
+        aria-current="page"
+        :to="{ name: 'Chat' }"
       >
-        <i class="bi bi-box2-heart h1 me-1"></i>
-        <strong>VUE</strong>
-      </router-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarText"
-        aria-controls="navbarText"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+        <div class="row align-items-center">
+          <span class="material-symbols-outlined col-1" style="font-size: 2em">
+            account_circle
+          </span>
+          <b class="col-5">Me connecter</b>
+        </div></router-link
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <router-link
-              class="nav-link"
-              :class="$route.name == 'Home' ? 'active' : ''"
-              aria-current="page"
-              :to="{ name: 'Home' }"
-              >Home</router-link
-            >
-          </li>
-        </ul>
+      <div class="col-2">
+        <ButtonDarkMode />
       </div>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
+import ButtonDarkMode from "../components/ButtonDarkMode.vue";
 export default {
   name: "AppHeader",
-  data() {
-    return {
-      notifications: [],
-    };
-  },
-  methods: {
-    logout() {
-      //this.$store.commit("Logout");
-      //this.$router.push("/login");
-    },
-  },
+  components: { ButtonDarkMode },
+  data() {},
+  methods: {},
 };
 </script>
+
+<style scoped></style>
