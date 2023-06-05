@@ -8,8 +8,8 @@ export default {
   setup() {
     //creating dynamic meta tags
     const siteData = reactive({
-      title: `My Chat App`,
-      description: `My beautiful Chat App`,
+      title: `Couleur3 Interact`,
+      description: `Pingu dev team`,
     });
     useHead({
       // Can be static or computed
