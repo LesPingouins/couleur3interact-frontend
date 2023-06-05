@@ -1,14 +1,14 @@
 <template>
   <div>
     <AppHeader />
+    <Navbar />
     <router-view />
-    <AppFooter />
   </div>
 </template>
 <script>
 import AppHeader from "../components/AppHeader.vue";
-import AppFooter from "../components/AppFooter.vue";
+import Navbar from "../components/Navbar.vue";
 export default {
-  components: { AppHeader, AppFooter },
+  components: { AppHeader, Navbar },
 };
 </script>
