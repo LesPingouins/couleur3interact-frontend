@@ -123,11 +123,14 @@ export default {
 </script>
 <style scoped>
 
+.col-12{
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25) inset;
+ 
+}
 .form-control{
   background-color: none;
   border: 2px solid #1E1E1E;
   border-radius: 22px;
-
 }
 button{
   opacity: 0%;
