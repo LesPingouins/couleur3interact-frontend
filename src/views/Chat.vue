@@ -1,5 +1,5 @@
 <template>
-  <main class="container min-h-content mb-3 mt-1">
+  <main class="container-fluid">
     <div class="card chat-card">
       <div class="row g-0">
         <ChatBox @renderChat="renderChat" />
@@ -8,6 +8,7 @@
   </main>
 </template>
 <script>
+import { deferredComputed } from "@vue/reactivity";
 import ChatBox from "../components/ChatBox.vue";
 
 export default {
@@ -16,7 +17,7 @@ export default {
     return {
       chatId: null,
       startChat: false,
-    };
+    }; 
   },
   methods: {
     /*
@@ -29,3 +30,25 @@ export default {
   },
 };
 </script>
+<style scoped>
+body{
+  background: linear-gradient(180deg, rgba(255, 0, 58, 0.2), rgba(241, 48, 233, 0.2));
+
+}
+main{
+background: linear-gradient(180deg, rgba(255, 0, 58, 0.2), rgba(241, 48, 233, 0.2));
+padding-left: 5%;
+padding-right: 5%;
+padding-bottom: 5%;
+}
+.card{
+  background-color:#FFFFFF;
+  border-radius: 0px 0px 22px 22px;
+  border: none;
+  padding: 0px;
+
+}
+.container-fluid{
+ 
+}
+</style>

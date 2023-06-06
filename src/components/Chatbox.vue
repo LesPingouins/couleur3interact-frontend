@@ -1,30 +1,24 @@
 <template>
-  <div class="col-12 col-lg-7 col-xl-9">
+  <div class="col-12 ">
     <div class="position-relative">
       <div id="chatBox" class="chat-messages p-4">
         <div v-for="message in messages" ref="messsageContainers" class="pb-4">
-          <div class="flex-shrink-1 message-box rounded py-2 px-3 mx-2">
+          <div class="flex-shrink-1 message-box rounded">
             {{ message }}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex-grow-0 py-3 px-4 border-top">
+    <div class="flex-grow-0border-top">
       <div class="input-group">
         <input
           type="text"
           v-model="message"
           class="form-control"
-          placeholder="Type your message"
+          placeholder="Écrire"
         />
-        <button
-          class="btn btn-primary"
-          :class="{ isSendingForm: disabled }"
-          @click="onSubmit"
-        >
-          <i class="bi bi-send"></i>
-        </button>
+       
       </div>
     </div>
   </div>
@@ -107,6 +101,40 @@ export default {
   },
   mounted() {
     this.startWebSocket();
+    this.messages.push("test");
+    this.messages.push("test2");
+    this.messages.push("test2");  
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+    this.messages.push("test2");
+   
   },
 };
 </script>
+<style scoped>
+
+.form-control{
+  background-color: none;
+  border: 2px solid #1E1E1E;
+  border-radius: 22px;
+
+}
+button{
+  opacity: 0%;
+}
+.form-control:focus{
+  border: 2px solid #1E1E1E;
+  box-shadow: none;
+}
+
+</style>

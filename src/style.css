@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,12 +12,26 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
+  --black: #1E1E1E;
+  --white: #FFFFFF;
   --color: #9176ff;
   --dark-color: #262E4A;
   --dark-icon-color: #262E4A;
   --light-color: #FBC711;
   --light-icon-color: #FBC711;
+
+  /* Font */
+  --font-main: 'RoundExtraBold';
+}
+
+/* FONT */
+@font-face {
+  font-family: 'RoundExtraBold';
+  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+}
+*{
+  font-family: var(--font-main);
+  
 }
 
 a {
