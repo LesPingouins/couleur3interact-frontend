@@ -15,7 +15,13 @@
   --black: #1E1E1E;
   --white: #FFFFFF;
   --blue-gradient : linear-gradient(180deg, #003BFF, #00FEFF);
+  --red-gradient: linear-gradient(180deg, #ff003a, #f130e9);
   --blue: #003bff;
+  --red: #ff003a;
+
+
+
+  
   --color: #9176ff;
   --dark-color: #262E4A;
   --dark-icon-color: #262E4A;

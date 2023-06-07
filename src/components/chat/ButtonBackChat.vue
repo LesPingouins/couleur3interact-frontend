@@ -1,14 +1,25 @@
 <template>
-	<button class="backchat-btn">
-		<span class="material-symbols-outlined"> chevron_left </span>
-		Retour
-	</button>
+  <div class="buttonbackchat d-flex">
+    <span class="material-symbols-outlined"> chevron_left </span>
+    Retour
+  </div>
 </template>
 
 <script>
 export default {
-	name: "ButtonBackChat",
+  name: "ButtonBackChat",
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.buttonbackchat {
+  background: none;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.material-symbols-outlined {
+  color: var(--red);
+}
+</style>
