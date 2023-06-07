@@ -1,24 +1,23 @@
 <template>
-  <div class="container mb-3">
-    <div class="row">
+  <div class="container-fluid d-flex justify-content-between">
       <router-link
-        class="nav-item nav-link col-10"
+        class=" nav-link"
         :class="$route.name == 'Chat' ? 'active' : ''"
         aria-current="page"
         :to="{ name: 'Chat' }"
-      >
-        <div class="row align-items-center">
-          <span class="material-symbols-outlined col-1" style="font-size: 2em">
+        >
+        <div class="d-flex justify-content-between align-self-center">
+          <span class="material-symbols-outlined">
             account_circle
           </span>
-          <b class="col-5">Me connecter</b>
-        </div></router-link
-      >
-      <div class="col-2">
+          <div class="d-flex connect align-self-center">
+          <b>Me connecter</b></div>
+        </div></router-link>
+     
+      <div class="nav-item nav-link d-flex align-self-center">
         <ButtonDarkMode />
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -31,4 +30,21 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.container-fluid{
+  background-color: #FFFFFF;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  
+}
+
+.material-symbols-outlined{
+  font-size: 40px;
+  padding-right: 10px;
+}
+.connect{
+  font-size: 20px;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 ">
+  <div class="col-12">
     <div class="position-relative">
       <div id="chatBox" class="chat-messages p-4">
         <div v-for="message in messages" ref="messsageContainers" class="pb-4">
@@ -135,6 +135,9 @@ button{
 .form-control:focus{
   border: 2px solid #1E1E1E;
   box-shadow: none;
+}
+.col-12{
+
 }
 
 </style>

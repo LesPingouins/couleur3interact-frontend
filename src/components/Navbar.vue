@@ -49,6 +49,7 @@ export default {
 .navbar {
   background-image: linear-gradient(180deg, #ff003a, #f130e9);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25) inset;
+  
 }
 
 .active {
