@@ -1,13 +1,20 @@
 <template>
-	<button class="backcontest-btn">
+	<div class="buttonbackcontest d-flex">
 		<span class="material-symbols-outlined"> chevron_left </span>
-		Retour
-	</button>
+		{{ buttonText }}
+	</div>
 </template>
 
 <script>
 export default {
 	name: "ButtonBackContest",
+	props: {
+		buttonText: {
+			type: String,
+			required: true,
+			default: "Retour",
+		},
+	},
 };
 </script>
 

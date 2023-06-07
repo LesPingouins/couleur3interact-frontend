@@ -1,18 +1,35 @@
 <template>
-	<div class="container min-h-content py-5 text-center">
-		<div class="row py-lg-5">
+	<div class="container-fluid">
+		<div class="row">
 			<div class="col">
-				<FormBox />
+				<ChoiceContest
+					buttonText="Gagnez 2 billets pour Paléo 2023"
+					backgroundImage="src/assets/images/sondage/TextButtonFixed-1.svg"
+				/>
+				<ChoiceContest
+					buttonText="Gagnez une nuit dans hôtel 5 étoiles pour 2 !"
+					backgroundImage="src/assets/images/sondage/TextButtonFixed-1.svg"
+				/>
+				<ChoiceContest
+					buttonText="Gagnez 1 bon pour spa & soins à Lavey les bains"
+					backgroundImage="src/assets/images/sondage/TextButtonFixed-1.svg"
+				/>
+				<ChoiceContest
+					buttonText="Gagnez un lecteur de vinyl dernier cri !"
+					backgroundImage="src/assets/images/sondage/TextButtonFixed-1.svg"
+				/>
+				<LabelNewContest />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import FormBox from "../components/concours/FormBox.vue";
+import ChoiceContest from "../components/concours/ChoiceContest.vue";
+import LabelNewContest from "../components/concours/LabelNewContest.vue";
 
 export default {
-	components: { FormBox },
+	components: { ChoiceContest, LabelNewContest },
 };
 </script>
 

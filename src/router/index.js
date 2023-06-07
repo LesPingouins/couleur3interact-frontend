@@ -7,6 +7,9 @@ import Connexion from "/src/views/Connexion.vue";
 import ChoixConnexion from "/src/views/ChoixConnexion.vue";
 import Inscription from "/src/views/Inscription.vue";
 import ConfirmationInscription from "/src/views/ConfirmationInscription.vue";
+import ConcoursForm from "/src/views/ConcoursForm.vue";
+import ConcoursQuestion from "/src/views/ConcoursQuestion.vue";
+import ConcoursQuestionConfirmation from "/src/views/ConcoursQuestionConfirmation.vue";
 import store from "../store";
 
 const routes = [
@@ -25,6 +28,21 @@ const routes = [
 				path: "/Concours",
 				name: "Concours",
 				component: Concours,
+			},
+			{
+				path: "/ConcoursForm",
+				name: "ConcoursForm",
+				component: ConcoursForm,
+			},
+			{
+				path: "/ConcoursQuestion",
+				name: "ConcoursQuestion",
+				component: ConcoursQuestion,
+			},
+			{
+				path: "/ConcoursQuestionConfirmation",
+				name: "ConcoursQuestionConfirmation",
+				component: ConcoursQuestionConfirmation,
 			},
 			{
 				path: "/Sondage",

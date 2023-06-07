@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import ButtonContest from "./ButtonContest.vue";
-import InputContest from "./InputContest.vue";
-import TitleContest from "./TitleContest.vue";
-import ButtonBackContest from "./ButtonBackContest.vue";
+import ButtonContest from "../ButtonContest.vue";
+import InputContest from "../InputContest.vue";
+import TitleContest from "../TitleContest.vue";
+import ButtonBackContest from "../ButtonBackContest.vue";
 
 export default {
 	components: {

@@ -1,14 +1,13 @@
 <template>
-	<button class="choix-btn" :style="backgroundStyle">
-		<div class="background-btn" ></div>
+	<button class="choicecontest-btn" :style="backgroundStyle">
+		<div class="background-btn"></div>
 		<span class="text-btn">{{ buttonText }}</span>
 	</button>
-
 </template>
 
 <script>
 export default {
-	name: "ChoixSondage",
+	name: "ChoiceContest",
 	props: {
 		buttonText: {
 			type: String,
@@ -28,11 +27,11 @@ export default {
 </script>
 
 <style scoped>
-.choix-btn{
+.choicecontest-btn {
 	border-radius: 20px 20px 20px 20px;
-	height : 100px;
-	width: 45%;
-	color: #FFFFFF;
+	height: 100px;
+	width: 100%;
+	color: #ffffff;
 	border: none;
 	background-position: center;
 	background-repeat: no-repeat;
