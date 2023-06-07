@@ -1,21 +1,27 @@
 <template>
-	<nav class="navbar">
-		<div class="navbar-left">
-			<button class="nav-arrow" @click="goToPreviousSurvey">
-				<span class="material-symbols-outlined"> arrow_circle_left </span>
-			</button>
+	<nav class="navbar d-flex justify-content-between">
+		<div class="d-flex">
+
+				<span class="material-symbols-outlined" @click="goToPreviousSurvey" > arrow_circle_left </span>
+		
+			<div class="align-self-center">
 			<span :class="{ 'nav-item': true }">{{ previousSurvey }}</span>
 		</div>
-		<div class="navbar-center">
+		</div>
+		<div class="d-flex">
 			<span :class="{ 'nav-item': true, active: currentSurvey === 1 }"
 				>Sondage{{ currentSurvey }}</span
 			>
 		</div>
-		<div class="navbar-right">
+		<div class="d-flex">
+			<div class="align-self-center">
 			<span :class="{ 'nav-item': true }">{{ nextSurvey }}</span>
-			<button class="nav-arrow" @click="goToNextSurvey">
-				<span class="material-symbols-outlined"> arrow_circle_right </span>
-			</button>
+			</div>
+				<span class="material-symbols-outlined"  @click="goToNextSurvey" > arrow_circle_right </span>
+			
+			
+		
+		
 		</div>
 	</nav>
 </template>
@@ -50,24 +56,41 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #f0f0f0;
-	padding: 10px;
+	background-color: #FFFFFF;
+	padding-left: 5%;
+	padding-right: 5%;	
+	padding-top: 2%;
+	padding-bottom: 2%;		
+	box-shadow: 0px 15px 8px rgba(0, 0, 0, 0.25);
+}
+.material-symbols-outlined{
+	border-radius: 99px;
+cursor: pointer;
+}
+
+.material-symbols-outlined:hover{
+color: var(--blue);
 }
 
 .nav-item {
-	margin: 0 10px;
 	cursor: pointer;
+	
 }
 
 .nav-arrow {
 	background: none;
 	border: none;
 	font-size: 20px;
-	cursor: pointer;
+	cursor: pointer;	
+}
+
+.material-symbols-outlined:first-child{
+padding-right: 20px;
+}
+
+.material-symbols-outlined:last-child{
+padding-left: 20px;
 }
 </style>

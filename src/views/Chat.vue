@@ -32,6 +32,7 @@ export default {
 </script>
 <style scoped>
 body{
+ 
   background: linear-gradient(180deg, rgba(255, 0, 58, 0.2), rgba(241, 48, 233, 0.2));
 
 }
@@ -40,6 +41,8 @@ background: linear-gradient(180deg, rgba(255, 0, 58, 0.2), rgba(241, 48, 233, 0.
 padding-left: 5%;
 padding-right: 5%;
 padding-bottom: 5%;
+
+
 }
 .card{
   background-color:#FFFFFF;
@@ -49,6 +52,6 @@ padding-bottom: 5%;
 
 }
 .container-fluid{
- 
+  box-shadow: 0px 15px 8px rgba(0, 0, 0, 0.25) inset;
 }
 </style>

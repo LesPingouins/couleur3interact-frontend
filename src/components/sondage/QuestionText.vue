@@ -20,4 +20,12 @@ defineProps({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+
+p{
+	text-align: left;
+	font-size: 30px;
+}
+
+
+</style>

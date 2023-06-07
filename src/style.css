@@ -14,6 +14,8 @@
   -webkit-text-size-adjust: 100%;
   --black: #1E1E1E;
   --white: #FFFFFF;
+  --blue-gradient : linear-gradient(180deg, #003BFF, #00FEFF);
+  --blue: #003bff;
   --color: #9176ff;
   --dark-color: #262E4A;
   --dark-icon-color: #262E4A;
@@ -31,9 +33,17 @@
 }
 *{
   font-family: var(--font-main);
+  transform: smooth;
+  transition: smooth;
+  scroll-behavior: smooth;
+
   
 }
 
+.row>* {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 a {
   font-weight: 500;
   color: #646cff;
