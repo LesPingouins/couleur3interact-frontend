@@ -2,17 +2,17 @@
 	<div class="container min-h-content py-5 text-center">
 		<div class="row py-lg-5">
 			<div class="col">
-				<FormulaireBox />
+				<FormBox />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import FormulaireBox from "../components/concours/FormulaireBox.vue";
+import FormBox from "../components/concours/FormBox.vue";
 
 export default {
-	components: { FormulaireBox },
+	components: { FormBox },
 };
 </script>
 

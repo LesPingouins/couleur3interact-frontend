@@ -1,13 +1,13 @@
 <template>
-	<div class="inputconcours-container">
-		<label class="inputconcours-label">{{ label }}</label>
+	<div class="inputcontest-container">
+		<label class="inputcontest-label">{{ label }}</label>
 		<input class="text-input" v-model="inputValue" :placeholder="placeholder" />
 	</div>
 </template>
 
 <script>
 export default {
-	name: "InputConcours",
+	name: "InputContest",
 	props: {
 		label: {
 			type: String,
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-.inputconcours-container {
+.inputcontest-container {
 	margin-bottom: 20px;
 	display: flex;
 	flex-direction: column;

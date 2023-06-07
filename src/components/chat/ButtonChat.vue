@@ -1,12 +1,12 @@
 <template>
-	<button class="concours-btn">
+	<button class="chat-btn">
 		<span class="text-btn">{{ buttonText }}</span>
 	</button>
 </template>
 
 <script>
 export default {
-	name: "ButtonConcours",
+	name: "ButtonChat",
 	props: {
 		buttonText: {
 			type: String,

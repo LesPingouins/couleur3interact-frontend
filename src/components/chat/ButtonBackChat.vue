@@ -1,5 +1,5 @@
 <template>
-	<button class="retour-btn">
+	<button class="backchat-btn">
 		<span class="material-symbols-outlined"> chevron_left </span>
 		Retour
 	</button>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-	name: "ButtonRetour",
+	name: "ButtonBackChat",
 };
 </script>
 

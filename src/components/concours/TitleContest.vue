@@ -1,21 +1,21 @@
 <template>
-	<p :class="role">
-		{{ texte }}
-	</p>
+	<h1 :class="role">
+		{{ text }}
+	</h1>
 </template>
 
 <script>
 export default {
-	name: "TitreConcours",
+	name: "TitleContest",
 	props: {
-		texte: {
+		text: {
 			type: String,
 			required: true,
 		},
 		role: {
 			type: String,
 			required: false,
-			default: "titre",
+			default: "title",
 		},
 	},
 };
