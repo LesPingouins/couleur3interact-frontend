@@ -1,15 +1,14 @@
 <template>
-	<div>
-		<ConfirmationBox />
-	</div>
+  <div>
+    <ConfirmationBox />
+  </div>
 </template>
 
 <script>
-import SignupBox from "../components/chat/signUp/SignupBox.vue";
 import ConfirmationBox from "../components/chat/signUp/ConfirmationBox.vue";
 
 export default {
-	components: { ConfirmationBox },
+  components: { ConfirmationBox },
 };
 </script>
 
