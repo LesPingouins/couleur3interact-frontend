@@ -56,16 +56,13 @@ export default {
   width: 1.3em;
   height: 1.3em;
   border-radius: 50%;
-
   position: absolute;
-
   transition: transform 0.3s ease;
 }
 
 .btn__icon-container {
   width: 100%;
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;

@@ -50,17 +50,23 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #f0f0f0;
-	padding: 10px;
+	background-color: #FFFFFF;
+	padding-left: 5%;
+	padding-right: 5%;		
+	width: 100%;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25) ;
+}
+.material-symbols-outlined{
+border-radius: 99px;
+
 }
 
 .nav-item {
-	margin: 0 10px;
 	cursor: pointer;
 }
 
