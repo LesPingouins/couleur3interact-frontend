@@ -16,8 +16,10 @@
   --white: #FFFFFF;
   --blue-gradient : linear-gradient(180deg, #003BFF, #00FEFF);
   --red-gradient: linear-gradient(180deg, #ff003a, #f130e9);
+  --green-gradient: linear-gradient(180deg, #00FF6D, #42D4CE);
   --blue: #003bff;
   --red: #ff003a;
+  --green: #00FF6D;
 
 
 
