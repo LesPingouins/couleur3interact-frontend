@@ -1,18 +1,19 @@
 <template>
-	<div class="col-12">
-		<div class="container-fluid">
-			<div id="pollBox d-flex">
-				<QuestionText
-					texte="Quel genre de musique préfériez vous entendre sur
+  <div class="col-12">
+    <div class="container-fluid">
+      <div id="pollBox d-flex">
+        <QuestionText
+          texte="Quel genre de musique préfériez vous entendre sur
 				Couleur 3 ?"
-				/>
-			</div>
+        />
+      </div>
 
-			<InputPoll placeholder="Saisissez votre genre de musique préféré" />
-
-			<ButtonPoll buttonText="Valider" />
-		</div>
-	</div>
+      <InputPoll placeholder="Saisissez votre genre de musique préféré" />
+      <div class="d-flex justify-content-center">
+        <ButtonPoll buttonText="Valider" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -21,8 +22,8 @@ import QuestionText from "../../QuestionText.vue";
 import InputPoll from "../../InputPoll.vue";
 
 export default {
-	name: "PollBox",
-	components: { ButtonPoll, QuestionText, InputPoll },
+  name: "PollBox",
+  components: { ButtonPoll, QuestionText, InputPoll },
 };
 </script>
 
