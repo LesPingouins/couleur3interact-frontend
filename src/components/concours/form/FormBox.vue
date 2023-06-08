@@ -16,6 +16,10 @@
           </div>
         </div>
         <InputContest label="E-mail" placeholder="Saisissez votre e-mail" />
+        <InputContest
+          label="Téléphone"
+          placeholder="Saisissez votre numéro de téléphone"
+        />
         <div class="d-flex justify-content-center">
           <ButtonContest buttonText="Envoyer" />
         </div>
