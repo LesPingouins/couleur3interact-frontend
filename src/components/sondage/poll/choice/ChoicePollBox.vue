@@ -38,10 +38,10 @@
 </template>
 
 <script>
-import ButtonChoice from "./ButtonChoice.vue";
-import ButtonPoll from "./ButtonPoll.vue";
-import QuestionText from "./QuestionText.vue";
-import ChoicePoll from "./ChoicePoll.vue";
+import ButtonChoice from "../../ButtonChoice.vue";
+import ButtonPoll from "../../ButtonPoll.vue";
+import QuestionText from "../../QuestionText.vue";
+import ChoicePoll from "../../ChoicePoll.vue";
 
 export default {
 	name: "PollBox",
