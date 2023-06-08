@@ -3,8 +3,7 @@
 		<div class="row">
 			<div class="col">
 				<NavPoll />
-				<img src="" alt="" />
-				<ChoicePollBox />
+				<InputPollResultBox />
 			</div>
 		</div>
 	</div>
@@ -12,10 +11,10 @@
 
 <script>
 import NavPoll from "../components/sondage/NavPoll.vue";
-import ChoicePollBox from "../components/sondage/poll/choice/ChoicePollBox.vue";
+import InputPollResultBox from "../components/sondage/poll/input/InputPollResultBox.vue";
 
 export default {
-	components: { NavPoll, ChoicePollBox },
+	components: { NavPoll, InputPollResultBox },
 };
 </script>
 

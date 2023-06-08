@@ -10,6 +10,10 @@ import ConfirmationInscription from "/src/views/ConfirmationInscription.vue";
 import ConcoursForm from "/src/views/ConcoursForm.vue";
 import ConcoursQuestion from "/src/views/ConcoursQuestion.vue";
 import ConcoursQuestionConfirmation from "/src/views/ConcoursQuestionConfirmation.vue";
+import SondageChoix from "/src/views/SondageChoix.vue";
+import SondageChoixResultat from "/src/views/SondageChoixResultat.vue";
+import SondageInput from "/src/views/SondageInput.vue";
+import SondageInputResultat from "/src/views/SondageInputResultat.vue";
 import store from "../store";
 
 const routes = [
@@ -48,6 +52,26 @@ const routes = [
 				path: "/Sondage",
 				name: "Sondage",
 				component: Sondage,
+			},
+			{
+				path: "/SondageChoix",
+				name: "SondageChoix",
+				component: SondageChoix,
+			},
+			{
+				path: "/SondageChoixResultat",
+				name: "SondageChoixResultat",
+				component: SondageChoixResultat,
+			},
+			{
+				path: "/SondageInput",
+				name: "SondageInput",
+				component: SondageInput,
+			},
+			{
+				path: "/SondageInputResultat",
+				name: "SondageInputResultat",
+				component: SondageInputResultat,
 			},
 			{
 				path: "/ChoixConnexion",
