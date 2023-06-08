@@ -14,6 +14,7 @@ import SondageChoix from "/src/views/SondageChoix.vue";
 import SondageChoixResultat from "/src/views/SondageChoixResultat.vue";
 import SondageInput from "/src/views/SondageInput.vue";
 import SondageInputResultat from "/src/views/SondageInputResultat.vue";
+import Utilisateur from "/src/views/Utilisateur.vue";
 import store from "../store";
 
 const routes = [
@@ -92,6 +93,11 @@ const routes = [
 				path: "/ConfirmationInscription",
 				name: "ConfirmationInscription",
 				component: ConfirmationInscription,
+			},
+			{
+				path: "/Utilisateur",
+				name: "Utilisateur",
+				component: Utilisateur,
 			},
 		],
 	},
