@@ -47,16 +47,14 @@ export default {
 
 <style scoped>
 .navbar {
-  background-image: linear-gradient(180deg, #ff003a, #f130e9);
+  background: var(--red-gradient);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25) inset;
-  
 }
 
 .active {
-  color: #f130e9 !important;
+  color: var(--red) !important;
   border: none;
   background-color: var(--white) !important;
-  
   padding-left: 1em;
   padding-right: 1em;
   border-radius: var(--bs-border-radius-pill) !important;

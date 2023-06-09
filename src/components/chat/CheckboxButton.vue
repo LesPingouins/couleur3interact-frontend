@@ -43,7 +43,7 @@ export default {
   border: 2px solid var(--black);
   width: 1.3em;
   height: 1.3em;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 50%;
   vertical-align: middle;
   appearance: none;

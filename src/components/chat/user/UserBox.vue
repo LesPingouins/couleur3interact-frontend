@@ -1,11 +1,11 @@
 <template>
-	<main class="container-fluid">
-		<div class="card chat-card">
-			<div id="userBox">
-				<ButtonBackChat />
-			</div>
-		</div>
-	</main>
+  <main class="container-fluid">
+    <div class="card chat-card">
+      <div id="userBox">
+        <ButtonBackChat />
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -15,12 +15,12 @@ import InputChat from "../InputChat.vue";
 import ButtonChat from "../ButtonChat.vue";
 
 export default {
-	components: {
-		ButtonBackChat,
-		TitleChat,
-		InputChat,
-		ButtonChat,
-	},
+  components: {
+    ButtonBackChat,
+    TitleChat,
+    InputChat,
+    ButtonChat,
+  },
 };
 </script>
 

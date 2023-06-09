@@ -20,12 +20,12 @@ export default {
 .contest-btn {
   border-radius: 99px;
   background: var(--green-gradient);
-  color: #ffffff;
+  color: var(--white);
   width: 100%;
   border: none;
 }
 .contest-btn:hover {
-  background: #ffffff;
+  background: var(--white);
   color: var(--green);
   border: 2px solid var(--green);
 }

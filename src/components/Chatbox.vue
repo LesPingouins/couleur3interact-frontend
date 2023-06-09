@@ -18,7 +18,6 @@
           class="form-control"
           placeholder="Écrire"
         />
-       
       </div>
     </div>
   </div>
@@ -103,7 +102,6 @@ export default {
     this.startWebSocket();
     this.messages.push("test");
     this.messages.push("test2");
-    this.messages.push("test2");  
     this.messages.push("test2");
     this.messages.push("test2");
     this.messages.push("test2");
@@ -117,27 +115,21 @@ export default {
     this.messages.push("test2");
     this.messages.push("test2");
     this.messages.push("test2");
-   
+    this.messages.push("test2");
   },
 };
 </script>
 <style scoped>
-
-.form-control{
+.form-control {
   background-color: none;
-  border: 2px solid #1E1E1E;
+  border: 2px solid var(--black);
   border-radius: 22px;
-
 }
-button{
+button {
   opacity: 0%;
 }
-.form-control:focus{
-  border: 2px solid #1E1E1E;
+.form-control:focus {
+  border: 2px solid var(--black);
   box-shadow: none;
 }
-.col-12{
-
-}
-
 </style>

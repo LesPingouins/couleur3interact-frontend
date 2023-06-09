@@ -11,41 +11,25 @@
           name="Techno"
           percentage="30%"
           voteCount="120"
-          color="linear-gradient(
-		180deg,
-		rgba(0, 255, 194, 1),
-		rgba(233, 100, 255, 0.5156),
-		rgba(219, 255, 0, 0)"
+          color="var(--green-pink-gradient)"
         />
         <BarGraphResult
           name="Techno"
           percentage="40%"
           voteCount="120"
-          color="linear-gradient(
-		180deg,
-		rgba(66, 0, 255, 1),
-		rgba(233, 100, 255, 0.5156),
-		rgba(219, 255, 0, 0)"
+          color="var(--blue-pink-gradient)"
         />
         <BarGraphResult
           name="Techno"
           percentage="40%"
           voteCount="120"
-          color="linear-gradient(
-		180deg,
-		rgba(255, 0, 0, 1),
-		rgba(233, 100, 255, 0.5156),
-		rgba(219, 255, 0, 0)"
+          color="var(--red-pink-gradient)"
         />
         <BarGraphResult
           name="Techno"
           percentage="40%"
           voteCount="120"
-          color="linear-gradient(
-		180deg,
-		rgba(219, 255, 0, 1),
-		rgba(233, 100, 255, 0.5156),
-		rgba(219, 255, 0, 0)"
+          color="var(--yellow-pink-gradient)"
         />
 
         <ButtonPoll buttonText="Prochain sondage" />

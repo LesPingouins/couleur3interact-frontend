@@ -11,7 +11,7 @@ export default {
 <style scoped>
 .anonymous-btn {
   border-radius: 99px;
-  background: #ffffff;
+  background: var(--white);
   color: var(--black);
   border: 2px solid var(--black);
   width: 100%;
@@ -20,7 +20,7 @@ export default {
 }
 .anonymous-btn:hover {
   background: var(--black);
-  color: #ffffff;
+  color: var(--white);
   border: 2px solid var(--black);
 }
 </style>

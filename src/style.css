@@ -15,8 +15,7 @@
   
   
   
-  --black: #1E1E1E;
-  --white: #FFFFFF;
+ 
   --color: #9176ff;
   --dark-color: #262E4A;
   --dark-icon-color: #262E4A;
@@ -34,13 +33,21 @@
   --red-gradient-op : linear-gradient(180deg, rgba(255, 0, 58, 0.2), rgba(241, 48, 233, 0.2));
   --green-gradient-op : linear-gradient(180deg, rgba(0, 255, 109, 0.2), rgba(66, 212, 206, 0.2));
 
+  /*Gradient 3 colors*/
+  --green-pink-gradient : linear-gradient(180deg,rgba(0, 255, 194, 1),rgba(233, 100, 255, 0.5156),	rgba(219, 255, 0, 0));
+  --blue-pink-gradient : linear-gradient(180deg,rgba(66, 0, 255, 1),rgba(233, 100, 255, 0.5156),	rgba(219, 255, 0, 0));
+  --red-pink-gradient : linear-gradient(180deg,rgba(255, 0, 0, 1),rgba(233, 100, 255, 0.5156),	rgba(219, 255, 0, 0));
+  --yellow-pink-gradient : linear-gradient(180deg,rgba(219, 255, 0, 1),rgba(233, 100, 255, 0.5156),	rgba(219, 255, 0, 0));
+
+
   /*Color*/
   --blue: #003bff;
   --red: #ff003a;
   --green: #00FF6D;
+  --black: #1E1E1E;
+  --white: #FFFFFF;
 
   /*Font*/
-  --font-main: 'RoundExtraBold';
 
   --big-title: 'bigTitle';
   --secondary-big-title: 'secondaryBigTitle';
@@ -50,7 +57,7 @@
   --chat-message: 'chatMessage';
   --small-text: 'smallText';
 }
-
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
 /* FONT */
 
 /*Big Title*/
@@ -104,20 +111,39 @@
   font-size: 12px;
   line-height: 14px;
 }
-
-
+h1{
+  font-family: var(--big-title);
+}
+h2{
+  font-family: var(--secondary-big-title);
+}
+h3{
+  font-family: var(--main-titles);
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
 *{
-  font-family: var(--font-main);
   transform: smooth;
   transition: smooth;
   scroll-behavior: smooth;
+}
 
+main{
+ padding: 5% !important;
+}
+
+input{
+  border: 2px solid var(--black) !important;
+  padding: 5px !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
+  border-radius: 4px !important;
 }
 
 .row>* {
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
 a {
   font-weight: 500;
   color: #646cff;
@@ -146,10 +172,7 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 
 button {
   border-radius: 8px;

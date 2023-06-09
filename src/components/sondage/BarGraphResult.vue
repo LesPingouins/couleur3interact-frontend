@@ -59,7 +59,7 @@ export default {
 }
 
 .bargraphresult .bar::after {
-  color: #1e1e1e;
+  color: var(--black);
   content: attr(data-name);
   position: absolute;
   left: 7%;
@@ -67,7 +67,7 @@ export default {
 }
 
 .bargraphresult .bar-back::after {
-  color: #1e1e1e;
+  color: var(--black);
   content: attr(data-votecount);
   position: absolute;
   right: 4%;

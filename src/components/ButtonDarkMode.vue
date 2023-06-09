@@ -37,7 +37,7 @@ export default {
 <style scoped>
 /* -------------- BUTTON -------------- */
 .btn {
-  background-color: #fbc711;
+  background-color: var(--light-color);
   width: 3em;
   height: 2em;
   border-radius: 10em;
@@ -52,7 +52,7 @@ export default {
 }
 
 .btn__indicator {
-  background-color: #fff;
+  background-color: var(--white);
   width: 1.3em;
   height: 1.3em;
   border-radius: 50%;
@@ -90,12 +90,12 @@ body.darkmode {
 }
 
 .darkmode .btn {
-  background-color: #262e4a;
+  background-color: var(--dark-color);
 }
 
 .darkmode .btn__indicator {
   transform: translateX(0.6em);
-  background-color: white;
+  background-color: var(--white);
 }
 
 .darkmode .btn__icon {

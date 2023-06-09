@@ -31,7 +31,7 @@ export default {
   border-radius: 20px 20px 20px 20px;
   height: 125px;
   width: 100%;
-  color: #ffffff;
+  color: var(--white);
   border: none;
   background-position: center;
   background-repeat: no-repeat;

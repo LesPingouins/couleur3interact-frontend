@@ -1,14 +1,14 @@
 <template>
-	<div>
-		<SignupBox />
-	</div>
+  <div>
+    <SignupBox />
+  </div>
 </template>
 
 <script>
 import SignupBox from "../components/chat/signUp/SignupBox.vue";
 
 export default {
-	components: { SignupBox },
+  components: { SignupBox },
 };
 </script>
 
