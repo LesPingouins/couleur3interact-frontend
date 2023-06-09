@@ -12,40 +12,106 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
+  
+  
   --black: #1E1E1E;
   --white: #FFFFFF;
-  --blue-gradient : linear-gradient(180deg, #003BFF, #00FEFF);
-  --red-gradient: linear-gradient(180deg, #ff003a, #f130e9);
-  --green-gradient: linear-gradient(180deg, #00FF6D, #42D4CE);
-  --blue: #003bff;
-  --red: #ff003a;
-  --green: #00FF6D;
-
-
-
-  
   --color: #9176ff;
   --dark-color: #262E4A;
   --dark-icon-color: #262E4A;
   --light-color: #FBC711;
   --light-icon-color: #FBC711;
 
-  /* Font */
+
+  /*Gradient 100%*/
+  --blue-gradient : linear-gradient(180deg, #003BFF, #00FEFF);
+  --red-gradient: linear-gradient(180deg, #ff003a, #f130e9);
+  --green-gradient: linear-gradient(180deg, #00FF6D, #42D4CE);
+
+   /*Gradient 20%*/
+  --blue-gradient-op : linear-gradient(180deg, rgba(0, 59, 255, 0.2), rgba(0, 254, 255, 0.2));
+  --red-gradient-op : linear-gradient(180deg, rgba(255, 0, 58, 0.2), rgba(241, 48, 233, 0.2));
+  --green-gradient-op : linear-gradient(180deg, rgba(0, 255, 109, 0.2), rgba(66, 212, 206, 0.2));
+
+  /*Color*/
+  --blue: #003bff;
+  --red: #ff003a;
+  --green: #00FF6D;
+
+  /*Font*/
   --font-main: 'RoundExtraBold';
+
+  --big-title: 'bigTitle';
+  --secondary-big-title: 'secondaryBigTitle';
+  --main-titles: 'mainTitles';
+  --big-text: 'bigText';
+  --medium-text: 'mediumText';
+  --chat-message: 'chatMessage';
+  --small-text: 'smallText';
 }
 
 /* FONT */
+
+/*Big Title*/
 @font-face {
-  font-family: 'RoundExtraBold';
+  font-family: 'bigTitle';
   src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  font-size: 32px;
+  line-height: 32px;
 }
+/*Secondary big title*/
+@font-face {
+  font-family: 'secondaryBigTitle';
+  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  font-size: 28px;
+  line-height: 24px;
+}
+/*Main titles*/
+@font-face {
+  font-family: 'mainTitles';
+  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  font-size: 20px;
+  line-height: 20px;
+}
+/*Menu + Button + Username + Secondary Menu (Sondage)*/
+@font-face {
+  font-family: 'bigText';
+  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/*Chat Hour + Username + Form Input + Label + Return Button*/
+@font-face {
+  font-family: 'mediumText';
+  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  font-size: 14px;
+  line-height: 14px;
+}
+/*Chat Message*/
+@font-face {
+  font-family: 'chatMessage';
+  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  font-size: 12px;
+  line-height: 12px;
+}
+
+/*Small text - Mot de passe oublié/ Se souvenir de moi/ etc...*/
+@font-face {
+  font-family: 'smallText';
+  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  font-size: 12px;
+  line-height: 14px;
+}
+
+
 *{
   font-family: var(--font-main);
   transform: smooth;
   transition: smooth;
   scroll-behavior: smooth;
 
-  
 }
 
 .row>* {
