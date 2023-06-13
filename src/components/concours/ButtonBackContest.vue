@@ -1,11 +1,13 @@
 <template>
-  <div class="buttonbackcontest d-flex">
+  <div @click="goBack()" class="buttonbackcontest d-flex">
     <span class="material-symbols-outlined"> chevron_left </span>
     <p>{{ buttonText }}</p>
   </div>
 </template>
 
 <script>
+import router from '../../router';
+
 export default {
   name: "ButtonBackContest",
   props: {
@@ -15,6 +17,11 @@ export default {
       default: "Retour",
     },
   },
+  methods: {
+    goBack() {
+      router.go(-1)
+    }
+  }
 };
 </script>
 
@@ -26,10 +33,12 @@ export default {
   cursor: pointer;
   font-family: var(--medium-text);
 }
+
 .material-symbols-outlined {
   color: var(--green);
   font-size: 50px;
 }
+
 p {
   padding-top: 12px;
 }
