@@ -1,6 +1,10 @@
 <template>
   <button class="chat-btn">
-    <span class="text-btn">{{ buttonText }}</span>
+    <router-link
+        class="nav-item nav-link"
+        :to="{ name:  link  }"
+        >{{ buttonText }}</router-link
+      >
   </button>
 </template>
 
@@ -9,6 +13,10 @@ export default {
   name: "ButtonChat",
   props: {
     buttonText: {
+      type: String,
+      required: true,
+    },
+    link: {
       type: String,
       required: true,
     },
