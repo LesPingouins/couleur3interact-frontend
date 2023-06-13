@@ -8,21 +8,26 @@
 <script>
 export default {
   name: "ChoiceContest",
+  data() {
+    return {
+      randomNumberBackground: 1
+    };
+
+  },
   props: {
     buttonText: {
-      type: String,
-      required: true,
-    },
-    backgroundImage: {
       type: String,
       required: true,
     },
   },
   computed: {
     backgroundStyle() {
-      return `background-image: url('${this.backgroundImage}')`;
+      return `background-image: url('src/assets/images/concours/TextButtonFixed-${this.randomNumberBackground}.svg')`;
     },
   },
+  mounted() {
+    this.randomNumberBackground = Math.floor(Math.random() * 4) + 1
+  }
 };
 </script>
 
@@ -38,6 +43,7 @@ export default {
   background-size: cover;
   margin-bottom: 20px;
 }
+
 span {
   color: var(--black);
   font-size: 20px;
