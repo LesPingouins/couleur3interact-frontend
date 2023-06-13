@@ -1,7 +1,7 @@
 <template>
-  <h1 :class="role">
+  <h2 :class="role">
     {{ text }}
-  </h1>
+  </h2>
 </template>
 
 <script>
@@ -21,9 +21,4 @@ export default {
 };
 </script>
 
-<style scoped>
-h1 {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-</style>
+<style scoped></style>

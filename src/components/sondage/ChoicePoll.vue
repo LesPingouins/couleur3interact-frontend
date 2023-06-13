@@ -1,7 +1,9 @@
 <template>
 	<button class="choicepoll-btn" :style="backgroundStyle">
 		<div class="background-btn"></div>
-		<span class="text-btn">{{ buttonText }}</span>
+		<h3>
+			{{ buttonText }}
+		</h3>
 	</button>
 </template>
 
@@ -28,13 +30,20 @@ export default {
 
 <style scoped>
 .choicepoll-btn {
-	border-radius: 20px 20px 20px 20px;
+	border-radius: 20px 20px 20px 20px !important;
 	height: 100px;
 	width: 100%;
-	color: #ffffff;
+	color: var(--white);
 	border: none;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%;
+}
+
+h3 {
+	color: var(--white) !important;
+	text-decoration-line: underline;
+	text-decoration-style: wavy;
+	text-decoration-color: var(--white);
 }
 </style>

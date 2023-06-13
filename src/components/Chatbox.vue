@@ -117,9 +117,8 @@ export default {
 <style scoped>
 .form-control {
   background-color: none;
-  border: 2px solid #1E1E1E;
+  border: 2px solid var(--black);
   border-radius: 22px;
-
 }
 
 button {
@@ -127,9 +126,7 @@ button {
 }
 
 .form-control:focus {
-  border: 2px solid #1E1E1E;
+  border: 2px solid var(--black);
   box-shadow: none;
 }
-
-.col-12 {}
 </style>

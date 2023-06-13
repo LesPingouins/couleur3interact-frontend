@@ -12,11 +12,10 @@ export default {
 
 <style scoped>
 .new-badge {
-  background-color: #1e1e1e;
-  color: #ffffff;
+  background-color: var(--black);
+  color: var(--white);
   padding: 5px 10px;
-  font-size: 12px;
   border-radius: 99px;
-  margin-top: 5px;
+  font-family: var(--small-text) !important;
 }
 </style>

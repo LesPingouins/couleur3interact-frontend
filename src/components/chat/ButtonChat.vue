@@ -25,16 +25,8 @@ export default {
 </script>
 
 <style scoped>
-.chat-btn {
-  border-radius: 99px;
-  background: var(--red-gradient);
-  color: #ffffff;
-  width: 100%;
-  border: none;
-}
-.chat-btn:hover {
-  background: #ffffff;
-  color: var(--red);
-  border: 2px solid var(--red);
+button {
+  width: 100% !important;
+  margin-bottom: 10px !important;
 }
 </style>

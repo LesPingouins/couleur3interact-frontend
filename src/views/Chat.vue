@@ -33,23 +33,13 @@ export default {
 };
 </script>
 <style scoped>
-body {
-	background: linear-gradient(180deg,
-			rgba(255, 0, 58, 0.2),
-			rgba(241, 48, 233, 0.2));
-}
-
 main {
-	background: linear-gradient(180deg,
-			rgba(255, 0, 58, 0.2),
-			rgba(241, 48, 233, 0.2));
-	padding-left: 5%;
-	padding-right: 5%;
-	padding-bottom: 5%;
+	background: var(--red-gradient-op);
+	padding-top: 0px !important;
 }
 
 .card {
-	background-color: #ffffff;
+	background: var(--white);
 	border-radius: 0px 0px 22px 22px;
 	border: none;
 	padding: 0px;

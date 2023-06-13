@@ -50,17 +50,8 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background: linear-gradient(180deg,
-      rgba(0, 255, 109, 0.2),
-      rgba(66, 212, 206, 0.2));
-}
-
 main {
-  background: linear-gradient(180deg,
-      rgba(0, 255, 109, 0.2),
-      rgba(66, 212, 206, 0.2));
-  padding: 5%;
+  background: var(--green-gradient-op);
 }
 
 .container-fluid {
@@ -69,7 +60,6 @@ main {
 
 .labelNewContest {
   position: absolute;
-  clip: rect(0px, 100%, 100%, 20px);
-  right: 40px;
+  right: 4%;
 }
 </style>

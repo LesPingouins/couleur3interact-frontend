@@ -7,7 +7,7 @@
 
       <InputPoll placeholder="Entrez ici votre réponse..." />
       <div class="d-flex justify-content-center">
-        <ButtonPoll buttonText="Valider" />
+        <ButtonPoll class="ButtonPoll" buttonText="Valider" />
       </div>
     </div>
   </div>
@@ -33,4 +33,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.ButtonPoll {
+  width: 100% !important;
+}
+</style>

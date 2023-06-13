@@ -31,12 +31,12 @@ export default {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 }
-
-input {
-  padding: 5px;
-  border: 2px solid var(--black);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
-  border-radius: 4px;
+.inputcontest-label {
+  font-family: var(--medium-text);
+}
+.text-input {
+  font-family: var(--medium-text);
 }
 </style>

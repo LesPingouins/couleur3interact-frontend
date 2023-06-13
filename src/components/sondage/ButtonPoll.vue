@@ -17,18 +17,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.poll-btn {
-  border-radius: 99px;
-  background: linear-gradient(180deg, #003bff, #00feff);
-  color: #ffffff;
-  width: 100%;
-  box-shadow: none;
-  border: none;
-}
-.poll-btn:hover {
-  background: #ffffff;
-  color: var(--blue);
-  border: 2px solid var(--blue);
-}
-</style>
+<style scoped></style>

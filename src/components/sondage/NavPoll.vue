@@ -1,33 +1,5 @@
 <template>
 	<nav class="navbar d-flex justify-content-between">
-
-
-		<!--
-			<span class="material-symbols-outlined" @click="goToPreviousSurvey"> arrow_circle_left </span>
-		<div v-for="poll in this.polls" class="d-flex">
-			<div class="align-self-center">
-				<span :class="{ 'nav-item': true, active: currentSurvey === 1 }">Sondage{{ poll.id }}</span>
-			</div>
-		</div>
-
-
-		<div class="d-flex">
-			<div class="align-self-center">
-				<span :class="{ 'nav-item': true }">{{ previousSurvey }}</span>
-			</div>
-		</div>
-		<div class="d-flex">
-			<div class="align-self-center">
-				<span :class="{ 'nav-item': true, active: currentSurvey === 1 }">Sondage{{ currentSurvey }}</span>
-			</div>
-		</div>
-		<div class="d-flex">
-			<div class="align-self-center">
-				<span :class="{ 'nav-item': true }">{{ nextSurvey }}</span>
-			</div>
-		</div>
-		<span class="material-symbols-outlined" @click="goToNextSurvey"> arrow_circle_right </span>
-		-->
 		<div>
 			<div class="nav-bar">
 				<button @click="prevItem">Précédent</button>
@@ -154,12 +126,15 @@ export default {
 
 <style scoped>
 .navbar {
-	background-color: #FFFFFF;
+	background-color: var(--white);
+	color: var(--black);
 	padding-left: 5%;
 	padding-right: 5%;
 	padding-top: 2%;
 	padding-bottom: 2%;
 	box-shadow: 0px 15px 8px rgba(0, 0, 0, 0.25);
+	font-family: var(--big-text);
+	margin-bottom: 20px;
 }
 
 .material-symbols-outlined {
@@ -173,6 +148,7 @@ export default {
 
 .nav-item {
 	cursor: pointer;
+
 }
 
 .nav-arrow {

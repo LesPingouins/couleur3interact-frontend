@@ -21,7 +21,7 @@
           placeholder="Saisissez votre numéro de téléphone"
         />
         <div class="d-flex justify-content-center">
-          <ButtonContest buttonText="Envoyer" />
+          <ButtonContest class="ButtonContest" buttonText="Envoyer" />
         </div>
       </div>
     </div>
@@ -44,4 +44,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.ButtonContest {
+  width: 100%;
+}
+</style>

@@ -14,7 +14,10 @@
 					<CheckboxButton title="Se souvenir de moi" checkboxId="checkbox1" checkboxValue="option1" />
 					<TextLinkChat linkText="Mot de passe oublié ?" link="https://www.example.com" />
 				</div>
-				<ButtonChat @click="submit" buttonText="Je me connecte!" />
+				<div class="pb-2 pt-4">
+					<ButtonChat @click="submit" buttonText="Je me connecte!" />
+				</div>
+
 				<div class="d-flex justify-content-center align-self-end">
 					<TextChat class="textChat" text="Vous n'avez pas de compte ?" />
 				</div>
@@ -72,18 +75,12 @@ export default {
 
 <style scoped>
 main {
-	background: linear-gradient(180deg,
-			rgba(255, 0, 58, 0.2),
-			rgba(241, 48, 233, 0.2));
-	padding-left: 5%;
-	padding-right: 5%;
-	padding-bottom: 5%;
-	padding-top: 5%;
+	background: var(--red-gradient-op);
 	height: 100%;
 }
 
 .card {
-	background-color: #ffffff;
+	background-color: var(--white);
 	border-radius: 22px;
 	border: none;
 	padding: 5% 5% 10% 5%;

@@ -1,4 +1,4 @@
-<template >
+<template>
 	<div v-if="is_predefined" class="col-12">
 		<div class="container-fluid">
 			<div id="pollBox row">
@@ -69,7 +69,6 @@ export default {
 		}
 
 	}
-
 };
 </script>
 

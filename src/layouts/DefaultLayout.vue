@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppHeader  />
+    <AppHeader />
     <Navbar class="navbar" />
     <router-view />
   </div>
@@ -13,11 +13,11 @@ export default {
 };
 </script>
 <style scoped>
-.navbar{
+.navbar {
+  margin-top: 20px;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
   z-index: 2;
 }
-
 </style>
