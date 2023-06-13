@@ -1,7 +1,7 @@
 <template>
-  <h3 :class="role">
+  <p :class="role">
     {{ text }}
-  </h3>
+  </p>
 </template>
 
 <script>
@@ -21,4 +21,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+p {
+  font-family: var(--small-text);
+}
+</style>

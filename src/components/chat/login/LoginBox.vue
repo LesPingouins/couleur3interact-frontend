@@ -17,7 +17,6 @@
 				<div class="pb-2 pt-4">
 					<ButtonChat @click="submitForm" buttonText="Je me connecte!" />
 				</div>
-
 				<div class="d-flex justify-content-center align-self-end">
 					<TextChat class="textChat" text="Vous n'avez pas de compte ?" />
 				</div>
@@ -74,6 +73,7 @@ export default {
 
 		}
 	}
+
 };
 </script>
 
@@ -81,6 +81,10 @@ export default {
 main {
 	background: var(--red-gradient-op);
 	height: 100%;
+}
+
+.textChat {
+	margin-bottom: 0px;
 }
 
 .card {
@@ -96,10 +100,5 @@ main {
 
 .space {
 	padding-bottom: 10px;
-}
-
-.textChat {
-	font-size: 16px;
-	margin-top: 10px;
 }
 </style>

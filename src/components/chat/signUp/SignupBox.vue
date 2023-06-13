@@ -3,7 +3,7 @@
     <div class="card chat-card">
       <div id="signupBox">
         <ButtonBackChat />
-        <TitleChat text="Créer un compte" />
+        <TitleChat style="margin-bottom: 20px" text="Créer un compte" />
         <InputChat
           label="Nom d'utilisateur *"
           placeholder="Saisissez votre nom d'utilisateur"
@@ -18,7 +18,7 @@
           placeholder="Saisissez votre mot de passe"
         />
 
-        <ButtonChat buttonText="Je crée mon compte" />
+        <ButtonChat style="margin-top: 10px" buttonText="Je crée mon compte" />
       </div>
     </div>
   </main>
@@ -41,15 +41,9 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 0, 58, 0.2),
-    rgba(241, 48, 233, 0.2)
-  );
-}
 main {
-  background: var(--ref-gradient-op);
+  background: var(--red-gradient-op);
+  height: 100%;
 }
 .card {
   background-color: var(--white);
