@@ -1,14 +1,15 @@
 <template>
   <div class="container-fluid d-flex justify-content-between">
-    <router-link class="nav-link" :class="$route.name == 'ChoixConnexion' ? 'active' : ''" aria-current="page"
-      :to="{ name: 'ChoixConnexion' }">
+    <div class="nav-link" @click="goTo()" :class="$route.name == 'ChoixConnexion' ? 'active' : ''">
       <div class="d-flex justify-content-between align-self-center">
         <span class="material-symbols-outlined"> account_circle </span>
         <div class="d-flex connect align-self-center">
-          <b>{{ username }}</b>
+          <b>{{ this.username }}</b>
         </div>
       </div>
-    </router-link>
+    </div>
+
+
 
     <div class="nav-item nav-link d-flex align-self-center">
       <ButtonDarkMode />
@@ -18,6 +19,7 @@
 
 <script>
 import ButtonDarkMode from "../components/ButtonDarkMode.vue";
+import router from "../router";
 import store from "../store";
 export default {
   name: "AppHeader",
@@ -25,9 +27,27 @@ export default {
     return {
       username: store.state.username !== "" ? store.state.username : "Me connecter",
     }
+
+  },
+  watch: {
+    "$store.state.username": function (val) {
+      console.log(val)
+      if (store.state.username !== "") this.username = store.state.username
+      else this.username = "Me connecter"
+
+    }
+
   },
   components: { ButtonDarkMode },
-  methods: {},
+  methods: {
+    goTo() {
+      if (store.state.username !== "") {
+        router.push("Utilisateur")
+      } else {
+        router.push("ChoixConnexion")
+      }
+    }
+  },
   mounted() {
     console.log(this.username)
     console.log(store.state)
