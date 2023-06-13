@@ -30,7 +30,7 @@ export default {
 .choicepoll-btn {
 	border-radius: 20px 20px 20px 20px;
 	height: 100px;
-	width: 45%;
+	width: 100%;
 	color: #ffffff;
 	border: none;
 	background-position: center;
