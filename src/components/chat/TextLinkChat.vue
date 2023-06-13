@@ -1,7 +1,7 @@
 <template>
   <div class="textlinkchat">
     <p>
-      <a :href="link" target="_blank" v-if="link">{{ linkText }}</a>
+      <a :href="link" v-if="link">{{ linkText }}</a>
     </p>
   </div>
 </template>
@@ -27,6 +27,7 @@ a {
   text-decoration: none;
   color: var(--red);
 }
+
 p {
   font-family: var(--small-text);
 }
