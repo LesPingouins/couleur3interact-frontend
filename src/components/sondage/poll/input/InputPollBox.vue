@@ -1,14 +1,11 @@
-<template>
-  <div class="col-12">
+<template >
+  <div v-if="!is_predefined" class="col-12">
     <div class="container-fluid">
       <div id="pollBox d-flex">
-        <QuestionText
-          texte="Quel genre de musique préfériez vous entendre sur
-				Couleur 3 ?"
-        />
+        <QuestionText :texte=poll.question />
       </div>
 
-      <InputPoll placeholder="Saisissez votre genre de musique préféré" />
+      <InputPoll placeholder="Entrez ici votre réponse..." />
       <div class="d-flex justify-content-center">
         <ButtonPoll buttonText="Valider" />
       </div>
@@ -23,6 +20,15 @@ import InputPoll from "../../InputPoll.vue";
 
 export default {
   name: "PollBox",
+  props: {
+    is_predefined: {
+      type: Boolean,
+    },
+    poll: {
+      type: Object,
+      default: "",
+    }
+  },
   components: { ButtonPoll, QuestionText, InputPoll },
 };
 </script>
