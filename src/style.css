@@ -246,7 +246,8 @@ button:hover{
     background-color: #f9f9f9;
   }
 }
-
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-x: 0rem !important;}
 .darkmode{
     /*Gradient 100%*/
     --blue-gradient : linear-gradient(180deg, #003BFF, #00FEFF);
