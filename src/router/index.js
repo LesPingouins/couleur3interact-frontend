@@ -15,97 +15,97 @@ import SondageChoixResultat from "/src/views/SondageChoixResultat.vue";
 import SondageInput from "/src/views/SondageInput.vue";
 import SondageInputResultat from "/src/views/SondageInputResultat.vue";
 import Utilisateur from "/src/views/Utilisateur.vue";
-import store from "../store";
+//import store from "../store";
 
 const routes = [
-	{
-		path: "/",
-		name: "Public",
-		component: DefaultLayout,
-		redirect: "/",
-		children: [
-			{
-				path: "/",
-				name: "Chat",
-				component: Chat,
-			},
-			{
-				path: "/Concours",
-				name: "Concours",
-				component: Concours,
-			},
-			{
-				path: "/ConcoursForm",
-				name: "ConcoursForm",
-				component: ConcoursForm,
-			},
-			{
-				path: "/ConcoursQuestion",
-				name: "ConcoursQuestion",
-				component: ConcoursQuestion,
-			},
-			{
-				path: "/ConcoursQuestionConfirmation",
-				name: "ConcoursQuestionConfirmation",
-				component: ConcoursQuestionConfirmation,
-			},
-			{
-				path: "/Sondage",
-				name: "Sondage",
-				component: Sondage,
-			},
-			{
-				path: "/SondageChoix",
-				name: "SondageChoix",
-				component: SondageChoix,
-			},
-			{
-				path: "/SondageChoixResultat",
-				name: "SondageChoixResultat",
-				component: SondageChoixResultat,
-			},
-			{
-				path: "/SondageInput",
-				name: "SondageInput",
-				component: SondageInput,
-			},
-			{
-				path: "/SondageInputResultat",
-				name: "SondageInputResultat",
-				component: SondageInputResultat,
-			},
-			{
-				path: "/ChoixConnexion",
-				name: "ChoixConnexion",
-				component: ChoixConnexion,
-			},
-			{
-				path: "/Connexion",
-				name: "Connexion",
-				component: Connexion,
-			},
-			{
-				path: "/Inscription",
-				name: "Inscription",
-				component: Inscription,
-			},
-			{
-				path: "/ConfirmationInscription",
-				name: "ConfirmationInscription",
-				component: ConfirmationInscription,
-			},
-			{
-				path: "/Utilisateur",
-				name: "Utilisateur",
-				component: Utilisateur,
-			},
-		],
-	},
+  {
+    path: "/",
+    name: "Public",
+    component: DefaultLayout,
+    redirect: "/",
+    children: [
+      {
+        path: "/",
+        name: "Chat",
+        component: Chat,
+      },
+      {
+        path: "/Concours",
+        name: "Concours",
+        component: Concours,
+      },
+      {
+        path: "/ConcoursForm",
+        name: "ConcoursForm",
+        component: ConcoursForm,
+      },
+      {
+        path: "/ConcoursQuestion",
+        name: "ConcoursQuestion",
+        component: ConcoursQuestion,
+      },
+      {
+        path: "/ConcoursQuestionConfirmation",
+        name: "ConcoursQuestionConfirmation",
+        component: ConcoursQuestionConfirmation,
+      },
+      {
+        path: "/Sondage",
+        name: "Sondage",
+        component: Sondage,
+      },
+      {
+        path: "/SondageChoix",
+        name: "SondageChoix",
+        component: SondageChoix,
+      },
+      {
+        path: "/SondageChoixResultat",
+        name: "SondageChoixResultat",
+        component: SondageChoixResultat,
+      },
+      {
+        path: "/SondageInput",
+        name: "SondageInput",
+        component: SondageInput,
+      },
+      {
+        path: "/SondageInputResultat",
+        name: "SondageInputResultat",
+        component: SondageInputResultat,
+      },
+      {
+        path: "/ChoixConnexion",
+        name: "ChoixConnexion",
+        component: ChoixConnexion,
+      },
+      {
+        path: "/Connexion",
+        name: "Connexion",
+        component: Connexion,
+      },
+      {
+        path: "/Inscription",
+        name: "Inscription",
+        component: Inscription,
+      },
+      {
+        path: "/ConfirmationInscription",
+        name: "ConfirmationInscription",
+        component: ConfirmationInscription,
+      },
+      {
+        path: "/Utilisateur",
+        name: "Utilisateur",
+        component: Utilisateur,
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
-	history: createWebHistory(),
-	routes,
+  history: createWebHistory(),
+  routes,
 });
 
 //if the user is not logged in, redirecting to login page
