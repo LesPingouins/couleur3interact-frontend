@@ -1,30 +1,28 @@
 import { createStore } from "vuex";
 
-export default createStore({
+const store = createStore({
   state: {
-    token: "",
-    name: "",
+    username: "",
     id: "",
+    email: "",
+    image: "",
     backendUrl: import.meta.env.VITE_BACKEND_URL,
     stateLoaded: false,
   },
   mutations: {
     //getting saved data from the web storage
     async initialiseStore(state) {
-      if (localStorage.getItem("token")) {
-        state.token = localStorage.getItem("token");
+      if (localStorage.getItem("username")) {
+        state.username = localStorage.getItem("username");
       }
-      if (localStorage.getItem("name")) {
-        state.name = localStorage.getItem("name");
+      if (localStorage.getItem("id")) {
+        state.image = localStorage.getItem("id");
+      }
+      if (localStorage.getItem("email")) {
+        state.image = localStorage.getItem("email");
       }
       if (localStorage.getItem("image")) {
         state.image = localStorage.getItem("image");
-      }
-      if (localStorage.getItem("id")) {
-        state.id = localStorage.getItem("id");
-      }
-      if (state.token == "") {
-        return false;
       }
       state.stateLoaded = true;
       return true;
@@ -32,28 +30,30 @@ export default createStore({
 
     //saving the login data from the login request
     saveLogin(state, LoginData) {
-      state.token = LoginData.token;
-      state.name = LoginData.name;
+      state.username = LoginData.username;
       state.image = LoginData.image;
+      state.email = LoginData.email;
       state.id = LoginData.id;
-      localStorage.setItem("token", LoginData.token);
-      localStorage.setItem("name", LoginData.name);
+      localStorage.setItem("username", LoginData.username);
       localStorage.setItem("image", LoginData.image);
       localStorage.setItem("id", LoginData.id);
+      localStorage.setItem("email", LoginData.email);
     },
 
     //remove all the data from web storage and store for logging out
     Logout(state) {
-      state.token = "";
-      state.name = "";
+      state.username = "";
       state.image = "";
+      state.email = "";
       state.id = "";
-      localStorage.removeItem("token");
-      localStorage.removeItem("name");
+      localStorage.removeItem("username");
       localStorage.removeItem("image");
+      localStorage.removeItem("email");
       localStorage.removeItem("id");
     },
   },
   actions: {},
   modules: {},
 });
+
+export default store;
