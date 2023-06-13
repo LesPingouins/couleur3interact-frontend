@@ -23,12 +23,25 @@
         <InputUser title="Ville" value="Neuchâtel" />
         <InputUser title="Téléphone" value="0791432547" />
 
-        <TitleChat text="Notifications" />
-        <ToggleUser text="Concours" />
-        <ToggleUser text="Annonce" />
-        <ToggleUser text="Sondage" />
-        <TextLinkChat linkText="Déconnexion" @click="logout()" link="#" />
-        <TextLinkChat linkText="Supprimer mon compte" link="https://www.example.com" />
+        <TitleChat style="margin-top: 20px !important" text="Notifications" />
+        <div class="d-flex toggleUser">
+          <ToggleUser text="Concours" />
+        </div>
+        <div class="d-flex toggleUser">
+          <ToggleUser text="Annonce" />
+        </div>
+        <div style="margin-bottom: 20px !important" class="d-flex toggleUser">
+          <ToggleUser text="Sondage" />
+        </div>
+        <div class="d-flex justify-content-center">
+          <TextLinkChat linkText="Déconnexion" @click="logout()" link="#" />
+        </div>
+        <div class="d-flex justify-content-center">
+          <TextLinkChat
+            linkText="Supprimer mon compte"
+            link="https://www.example.com"
+          />
+        </div>
       </div>
     </div>
   </main>
@@ -55,18 +68,38 @@ export default {
   },
   methods: {
     logout() {
-      store.commit("logout")
-      router.push("/")
-    }
-  }
+      store.commit("logout");
+      router.push("/");
+    },
+  },
 };
 </script>
 
 <style scoped>
+main {
+  background: var(--red-gradient-op);
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 22px;
+  border: none;
+  padding: 5% 5% 10% 5%;
+}
+
+.container-fluid {
+  box-shadow: 0px 15px 8px rgba(0, 0, 0, 0.25) inset;
+}
 .btn {
   text-align: center;
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
+  text-decoration: underline !important;
+  border: none !important;
+}
+.material-symbols-outlined {
+  font-size: 100px;
+  color: var(--black) !important;
 }
 </style>

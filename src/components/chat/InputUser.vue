@@ -1,7 +1,7 @@
 <template>
   <div class="input-container">
     <div class="input-info">
-      <p>{{ title }}</p>
+      <p class="title">{{ title }}</p>
       <p v-if="!isEditing" @click="toggleEditing" class="input-value">
         {{ value }}
       </p>
@@ -61,6 +61,10 @@ export default {
 </script>
 
 <style scoped>
+input {
+  margin-bottom: 5px !important;
+}
+
 .input-container {
   display: flex;
   align-items: center;
@@ -79,6 +83,9 @@ export default {
 
 .input-value {
   color: #848484;
+  width: 45vw;
+  border-bottom: 2px solid var(--red);
+  margin-bottom: 15px !important;
 }
 
 .edit-icon {
@@ -86,10 +93,16 @@ export default {
 }
 
 .fa-pencil {
-  color: orangered;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  color: var(--red);
 }
 
 .fa-check {
   color: green;
+}
+.title {
+  font-family: var(--medium-text);
+  width: 20vw;
 }
 </style>
