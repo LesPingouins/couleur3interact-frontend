@@ -41,7 +41,7 @@ const store = createStore({
     },
 
     //remove all the data from web storage and store for logging out
-    Logout(state) {
+    logout(state) {
       state.username = "";
       state.image = "";
       state.email = "";
