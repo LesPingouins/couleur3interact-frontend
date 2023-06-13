@@ -1,7 +1,7 @@
 <template>
   <div class="inputchat-container">
     <label class="inputchat-label">{{ label }}</label>
-    <input class="text-input" v-model="inputValue" :placeholder="placeholder" />
+    <input :type=type :name=name class="text-input" v-model="value" :placeholder="placeholder" />
   </div>
 </template>
 
@@ -17,10 +17,18 @@ export default {
       type: String,
       default: "",
     },
+    name: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
-      inputValue: "",
+      value: "",
     };
   },
 };
@@ -33,6 +41,7 @@ input {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
   border-radius: 4px;
 }
+
 .inputchat-container {
   margin-bottom: 20px;
   display: flex;
