@@ -1,18 +1,14 @@
 <template>
   <div class="container-fluid d-flex justify-content-between">
-    <router-link
-      class="nav-link"
-      :class="$route.name == 'ChoixConnexion' ? 'active' : ''"
-      aria-current="page"
-      :to="{ name: 'ChoixConnexion' }"
-    >
+    <router-link class="nav-link" :class="$route.name == 'ChoixConnexion' ? 'active' : ''" aria-current="page"
+      :to="{ name: 'ChoixConnexion' }">
       <div class="d-flex justify-content-between align-self-center">
         <span class="material-symbols-outlined"> account_circle </span>
         <div class="d-flex connect align-self-center">
           <b>Me connecter</b>
         </div>
-      </div></router-link
-    >
+      </div>
+    </router-link>
 
     <div class="nav-item nav-link d-flex align-self-center">
       <ButtonDarkMode />
@@ -25,7 +21,6 @@ import ButtonDarkMode from "../components/ButtonDarkMode.vue";
 export default {
   name: "AppHeader",
   components: { ButtonDarkMode },
-  data() {},
   methods: {},
 };
 </script>
@@ -43,6 +38,7 @@ export default {
   font-size: 40px;
   padding-right: 10px;
 }
+
 .connect {
   font-size: 20px;
 }
