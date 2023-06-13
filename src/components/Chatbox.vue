@@ -4,9 +4,9 @@
       <div id="chatBox" class="chat-messages p-4">
         <div v-for="message in messages" ref="messageContainers" class="pb-2">
           <div class="flex-shrink-1 message-box rounded">
-            <i class="chatHour"> {{ message.time }}</i>
-            <strong class="userChat"> {{ message.username }} </strong>
-            <strong class="messageChat">{{ message.message }}</strong>
+            <i class="chatHour">{{ message.time }}&nbsp;</i>
+            <strong class="userChat"> {{ message.username }}: </strong>
+            <strong class="messageChat"> {{ message.message }} </strong>
           </div>
         </div>
       </div>
