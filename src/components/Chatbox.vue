@@ -45,7 +45,7 @@ export default {
     getTime() {
       return moment().format("HH:mm");
     },
-    // to auto-scroll to the new received  message
+
     scrollToLastMessage() {
       this.$nextTick(() => {
         let items = this.$refs.messageContainers;
@@ -61,55 +61,53 @@ export default {
       });
     },
 
-    // to send new message
     async onSubmit() {
+      if (this.message !== "") {
+        if (this.$store.state.username !== "") {
+          this.isSendingForm = true;
 
-      if (this.$store.state.username !== "") {
-        this.isSendingForm = true;
-        axios
-          .post(
-            this.$store.state.backendUrl + "/chat",
-            {
-              message: this.message,
-              username: this.username
-            },
-            {
-              headers: {
-                "Content-Type": "application/json",
+          axios
+            .post(
+              this.$store.state.backendUrl + "/chat",
+              {
+                message: this.message,
+                username: this.username
               },
-            }
-          )
-          .then((response) => {
-            console.log(response);
-            if (response.status === 200) {
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            )
+            .then((response) => {
+              console.log(response);
+              if (response.status === 200) {
+                this.isSendingForm = false;
+                this.message = "";
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+              this.ShowError = true;
+              this.errorMgs = error.response.data.error;
               this.isSendingForm = false;
-              this.message = "";
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-            this.ShowError = true;
-            this.errorMgs = error.response.data.error;
-            this.isSendingForm = false;
-          });
-      } else router.push("ChoixConnexion")
+            });
+
+        } else {
+          router.push("ChoixConnexion")
+        }
+      }
     },
 
     //to subscribe to the chat websocket channel
     async startWebSocket() {
-      console.log("startWebSocket");
       Echo.channel("chat").listen("MessageSent", (e) => {
         e.time = moment().format("HH:mm");
-        console.log(e)
         this.messages.push(e);
-        console.log(this.messages)
-        //this.scrollToLastMessage();
+        this.scrollToLastMessage();
       });
 
-      //console.log(Echo.channel("poll").listen("PollSent"))
-      Echo.channel("poll").listen("PollSent", (e) => {
-        alert(e.question.question);
-      });
+
     },
   },
   watch: {
