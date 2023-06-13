@@ -13,7 +13,7 @@
 					<TextChat text="Vous avez déjà un compte ?" />
 				</div>
 				<div class="d-flex justify-content-center">
-					<ButtonChat buttonText="Se connecter" />
+					<ButtonChat link="Connexion" buttonText="Se connecter" />
 				</div>
 				<div class="d-flex justify-content-center"><ButtonAnonymous /></div>
 

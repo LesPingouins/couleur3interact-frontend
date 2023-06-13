@@ -60,6 +60,7 @@ export default {
 
 .content.expanded {
 	display: block;
-	max-height: 500px; /* Adjust the max-height value as needed */
+	max-height: 500px;
+	/* Adjust the max-height value as needed */
 }
 </style>
