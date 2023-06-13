@@ -2,18 +2,25 @@
   <div class="col-12">
     <div class="position-relative">
       <div id="chatBox" class="chat-messages p-4">
-        <div v-for="message in messages" ref="messageContainers" class="pb-4">
+        <div v-for="message in messages" ref="messageContainers" class="pb-2">
           <div class="flex-shrink-1 message-box rounded">
-            <i> {{ getTime() }}</i> - salut : {{ message }}
+            <i class="chatHour"> {{ getTime() }}</i>
+            <strong class="userChat"> salut : </strong>
+            <strong class="messageChat">{{ message }}</strong>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex-grow-0border-top">
+    <div class="flex-grow-0border-top inputMessage">
       <div class="input-group">
-        <input type="text" @keyup.enter="onSubmit" v-model="message" class="form-control" placeholder="Écrire" />
-
+        <input
+          type="text"
+          @keyup.enter="onSubmit"
+          v-model="message"
+          class="form-control"
+          placeholder="Écrire"
+        />
       </div>
     </div>
   </div>
@@ -21,12 +28,12 @@
 
 <script>
 import axios from "axios";
-import moment from 'moment';
+import moment from "moment";
 
 export default {
   props: ["chat_id"],
-  setup() { },
-  created: function () { },
+  setup() {},
+  created: function () {},
   data() {
     console.log();
     return {
@@ -40,7 +47,7 @@ export default {
   },
   methods: {
     getTime() {
-      return moment().format("HH:mm")
+      return moment().format("HH:mm");
     },
     // to auto-scroll to the new received  message
     scrollToLastMessage() {
@@ -76,7 +83,6 @@ export default {
           if (response.status === 200) {
             this.isSendingForm = false;
             this.message = "";
-
           }
         })
         .catch((error) => {
@@ -85,7 +91,6 @@ export default {
           this.errorMgs = error.response.data.error;
           this.isSendingForm = false;
         });
-
     },
 
     //to subscribe to the chat websocket channel
@@ -120,7 +125,19 @@ export default {
   border: 2px solid var(--black);
   border-radius: 22px;
 }
-
+input {
+  border-radius: 99px !important;
+  border: 3px var(--black) solid !important;
+  box-shadow: none !important;
+  padding-left: 21px !important;
+  width: 100% !important;
+}
+.inputMessage {
+  position: absolute !important;
+  width: 100% !important;
+  top: 0px !important;
+  margin-top: 73vh !important;
+}
 button {
   opacity: 0%;
 }
@@ -128,5 +145,20 @@ button {
 .form-control:focus {
   border: 2px solid var(--black);
   box-shadow: none;
+}
+.chatHour {
+  font-family: var(--medium-text);
+}
+.userChat {
+  font-family: var(--medium-text);
+}
+.messageChat {
+  font-family: var(--chat-message);
+}
+.col-12 {
+  height: 77vh;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
 }
 </style>

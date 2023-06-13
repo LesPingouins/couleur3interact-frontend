@@ -55,6 +55,8 @@
   --medium-text: 'mediumText';
   --chat-message: 'chatMessage';
   --small-text: 'smallText';
+ 
+
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -100,7 +102,7 @@
 /*Chat Message*/
 @font-face {
   font-family: 'chatMessage';
-  src: url('../public/font/Round-Extrabold.otf') format('opentype');
+  src: url('../public/font/Roboto-Regular.ttf') format('truetype');
   font-size: 12px;
   line-height: 12px;
 }
@@ -112,6 +114,9 @@
   font-size: 12px;
   line-height: 14px;
 }
+
+
+
 h1{
   font-family: var(--big-title);
   color: var(--black) !important;
@@ -140,7 +145,7 @@ main{
 }
 
 input{
-  border: 2px solid var(--black) !important;
+  border: 3px solid var(--black) !important;
   padding: 5px !important;
   padding-left: 10px !important;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15) inset !important;
@@ -201,7 +206,7 @@ button {
 button:hover{
   background: var(--white);
   color: var(--blue);
-  border: 2px solid var(--blue);
+  border: 3px solid var(--blue);
 }
 
 .card {
@@ -211,6 +216,20 @@ button:hover{
 #app {
   width: 100%;
 }
+@media (min-width: 768px)
+{
+  .container, .container-md, .container-sm {
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 576px)
+{
+  .container, .container-md, .container-sm {
+    max-width: none !important;
+  }
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
