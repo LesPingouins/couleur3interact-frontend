@@ -20,14 +20,13 @@ export default {
 
 <style scoped>
 .container-fluid {
-	background: linear-gradient(
-		180deg,
-		rgba(0, 59, 255, 0.2),
-		rgba(0, 254, 255, 0.2)
-	);
+	background: linear-gradient(180deg,
+			rgba(0, 59, 255, 0.2),
+			rgba(0, 254, 255, 0.2));
 	padding-bottom: 5%;
 }
-.row > * {
+
+.row>* {
 	padding-right: 0px;
 	padding-left: 0px;
 }
