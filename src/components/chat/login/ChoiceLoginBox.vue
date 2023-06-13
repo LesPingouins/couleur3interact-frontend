@@ -20,7 +20,7 @@
           <TextChat text="Vous êtes un·e nouvel·le utilisateur·trice ?" />
         </div>
         <div class="d-flex justify-content-center">
-          <ButtonChat buttonText="Créer un compte" />
+          <ButtonChat link="Inscription" buttonText="Créer un compte" />
         </div>
       </div>
     </div>

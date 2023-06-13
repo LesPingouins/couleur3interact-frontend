@@ -1,10 +1,7 @@
 <template>
   <button class="chat-btn">
-    <router-link
-        class="nav-item nav-link"
-        :to="{ name:  link  }"
-        >{{ buttonText }}</router-link
-      >
+    <router-link class="nav-item nav-link" :to="{ name: link }">{{ buttonText
+    }}</router-link>
   </button>
 </template>
 
@@ -19,7 +16,7 @@ export default {
     link: {
       type: String,
       required: true,
-    },
+    }
   },
 };
 </script>
