@@ -5,7 +5,7 @@
       <div class="d-flex justify-content-between align-self-center">
         <span class="material-symbols-outlined"> account_circle </span>
         <div class="d-flex connect align-self-center">
-          <b>Me connecter</b>
+          <b>{{ username }}</b>
         </div>
       </div>
     </router-link>
@@ -18,10 +18,20 @@
 
 <script>
 import ButtonDarkMode from "../components/ButtonDarkMode.vue";
+import store from "../store";
 export default {
   name: "AppHeader",
+  data() {
+    return {
+      username: store.state.username !== "" ? store.state.username : "Me connecter",
+    }
+  },
   components: { ButtonDarkMode },
   methods: {},
+  mounted() {
+    console.log(this.username)
+    console.log(store.state)
+  }
 };
 </script>
 
