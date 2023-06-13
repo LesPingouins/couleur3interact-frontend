@@ -27,11 +27,8 @@
         <ToggleUser text="Concours" />
         <ToggleUser text="Annonce" />
         <ToggleUser text="Sondage" />
-        <TextLinkChat linkText="Déconnexion" link="https://www.example.com" />
-        <TextLinkChat
-          linkText="Supprimer mon compte"
-          link="https://www.example.com"
-        />
+        <TextLinkChat linkText="Déconnexion" @click="logout()" link="#" />
+        <TextLinkChat linkText="Supprimer mon compte" link="https://www.example.com" />
       </div>
     </div>
   </main>
@@ -44,6 +41,8 @@ import InputChat from "../InputChat.vue";
 import TextLinkChat from "../TextLinkChat.vue";
 import InputUser from "../InputUser.vue";
 import ToggleUser from "../ToggleUser.vue";
+import store from "../../../store";
+import router from "../../../router";
 
 export default {
   components: {
@@ -54,6 +53,12 @@ export default {
     InputUser,
     ToggleUser,
   },
+  methods: {
+    logout() {
+      store.commit("logout")
+      router.push("/")
+    }
+  }
 };
 </script>
 
