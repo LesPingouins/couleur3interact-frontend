@@ -4,14 +4,18 @@
 			<div id="pollBox row">
 				<QuestionText :texte=poll.question />
 				<div class="choixSondage row d-flex justify-content-between">
-					<div v-for="(answer, index) in answers" class="active choix col-6 mt-2">
-						<ChoicePoll :buttonText="answer.name_of" class="col-12"
+					<div v-for="(answer, index) in answers" class="active  col-6 mt-2">
+						<ChoicePoll :key="index" @click="selectThis(index)" :class="{
+							active: index === activeItem,
+							blurry: index !== activeItem && this.activeItem !== null
+						}" :buttonText="answer.name_of" class="col-12 choix"
 							backgroundImage="src/assets/images/sondage/TextButtonFixed-1.svg" />
 					</div>
 
 
 				</div>
-				<ButtonChoice />
+				<ButtonChoice :background-color="this.color" :isItemsEnabled="this.isActive"
+					:class="{ 'active-button': this.activeItem !== null }" />
 			</div>
 		</div>
 	</div>
@@ -39,6 +43,9 @@ export default {
 	data() {
 		return {
 			answers: [],
+			isActive: false,
+			activeItem: null,
+			color: "grey",
 
 		};
 	},
@@ -56,10 +63,14 @@ export default {
 					this.answers = response.data
 				}
 			}).catch((error) => {
-				console.log(error);
 				this.ShowError = true;
 				this.errorMgs = error.response.data.error;
 			});
+		},
+		selectThis(index) {
+			this.isActive = true;
+			this.color = "var(--blue-gradient)"
+			this.activeItem = index;
 		}
 	},
 	watch: {

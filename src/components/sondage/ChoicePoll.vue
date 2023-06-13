@@ -22,7 +22,7 @@ export default {
 	},
 	computed: {
 		backgroundStyle() {
-			return `background-image: url('${this.backgroundImage}')`;
+			return `background-image: url('/src/assets/images/sondage/TextButtonFixed-1.svg')`;
 		},
 	},
 };

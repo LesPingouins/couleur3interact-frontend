@@ -1,7 +1,7 @@
 <template>
   <div class="inputcontest-container">
     <label class="inputcontest-label">{{ label }}</label>
-    <input class="text-input" v-model="inputValue" :placeholder="placeholder" />
+    <input class="text-input" v-model="value" :placeholder="placeholder" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      inputValue: "",
+      value: "",
     };
   },
 };
@@ -31,11 +31,12 @@ export default {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
 }
+
 .inputcontest-label {
   font-family: var(--medium-text);
 }
+
 .text-input {
   font-family: var(--medium-text);
 }

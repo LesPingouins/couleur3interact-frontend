@@ -1,8 +1,10 @@
 <template>
   <main class="container-fluid">
     <div v-for="contest in this.contests">
-      <LabelNewContest class="labelNewContest" />
-      <ChoiceContest :buttonText="contest.name_of" />
+      <div @click="goToContest(contest.id)">
+        <LabelNewContest class="labelNewContest" />
+        <ChoiceContest :buttonText="contest.name_of" />
+      </div>
     </div>
   </main>
 </template>
@@ -11,6 +13,7 @@
 import ChoiceContest from "../components/concours/ChoiceContest.vue";
 import LabelNewContest from "../components/concours/LabelNewContest.vue";
 import axios from "axios";
+import router from "../router";
 
 export default {
   components: { ChoiceContest, LabelNewContest },
@@ -41,6 +44,10 @@ export default {
           this.ShowError = true;
           this.errorMgs = error.response.data.error;
         });
+    },
+    goToContest(id) {
+
+      router.push("ConcoursQuestion/?id=" + id)
     },
   },
   mounted() {

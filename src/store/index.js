@@ -16,10 +16,10 @@ const store = createStore({
         state.username = localStorage.getItem("username");
       }
       if (localStorage.getItem("id")) {
-        state.image = localStorage.getItem("id");
+        state.id = localStorage.getItem("id");
       }
       if (localStorage.getItem("email")) {
-        state.image = localStorage.getItem("email");
+        state.email = localStorage.getItem("email");
       }
       if (localStorage.getItem("image")) {
         state.image = localStorage.getItem("image");

@@ -56,8 +56,8 @@ export default {
 				}
 			)
 				.then((response) => {
-					console.log(response.data);
 					if (response.status === 200) {
+						console.log(response.data)
 						this.polls = response.data;
 						this.prevIndex = response.data.length - 1;
 						if (response.data.length <= 1) this.showItem = false;
@@ -65,43 +65,35 @@ export default {
 					}
 				})
 				.catch((error) => {
-					console.log(error);
 					this.ShowError = true;
 					this.errorMgs = error.response.data.error;
 				});
 		},
 		prevItem() {
+			if (this.polls.length >= 3) {
+				this.nextIndex = (this.nextIndex - 1 + this.polls.length) % this.polls.length;
+				this.activeIndex = this.prevIndex;
+				this.prevIndex = (this.prevIndex - 1 + this.polls.length) % this.polls.length;
+			} else if (this.polls.length === 2) {
+				if (this.activeIndex === 0) {
+					this.nextIndex = 0;
+					this.prevIndex = 0;
+					this.activeIndex = 1;
+				} else {
+					this.nextIndex = 1;
+					this.prevIndex = 1;
+					this.activeIndex = 0;
+				}
+			}
 
-			console.log(test);
-			console.log(this.activeIndex);
 		},
 		nextItem() {
 			console.log(this.prevIndex + "-" + this.activeIndex + "-" + this.nextIndex);
 			console.log(this.polls.length);
 			if (this.polls.length >= 3) {
-				if (this.activeIndex === this.polls.length - 1) {
-					this.nextIndex = this.nextIndex + 1;
-					this.prevIndex = this.activeIndex;
-					this.activeIndex = 0;
-					console.log("e1")
-				} else if (this.nextIndex === this.polls.length - 1) {
-					this.prevIndex = this.activeIndex;
-					this.activeIndex = this.nextIndex;
-					this.nextIndex = 0;
-					console.log("e2")
-
-				} else if (this.prevIndex === this.polls.length - 1) {
-					this.activeIndex = this.nextIndex;
-					this.nextIndex = this.nextIndex + 1;
-					this.prevIndex = 0;
-					console.log("e3")
-				}
-				else {
-					this.nextIndex++;
-					this.activeIndex++;
-					this.prevIndex++;
-					console.log("e4")
-				}
+				this.prevIndex = this.activeIndex;
+				this.activeIndex = this.nextIndex;
+				this.nextIndex = (this.nextIndex + 1) % this.polls.length;
 			} else if (this.polls.length === 2) {
 				if (this.activeIndex === 1) {
 					this.nextIndex = 1;
