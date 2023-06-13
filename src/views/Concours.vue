@@ -44,7 +44,6 @@ main {
 }
 .labelNewContest {
   position: absolute;
-  clip: rect(0px, 100%, 100%, 20px);
-  right: 40px;
+  right: 4%;
 }
 </style>

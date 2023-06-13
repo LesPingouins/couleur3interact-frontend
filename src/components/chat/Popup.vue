@@ -4,7 +4,8 @@
       <i :class="chevronClass"></i>
       <div class="time">
         <span class="material-symbols-outlined"> hourglass_empty </span>
-        {{ timeLeft }} secondes restantes
+        {{ timeLeft }}
+        <p>secondes restantes</p>
       </div>
       <TitleChat text="Quel est votre style de musique favori ?" />
     </div>
@@ -61,5 +62,8 @@ export default {
 .content.expanded {
   display: block;
   max-height: 500px; /* Adjust the max-height value as needed */
+}
+p {
+  font-family: var(--main-titles);
 }
 </style>

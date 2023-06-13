@@ -49,6 +49,7 @@ export default {
 .navbar {
   background: var(--red-gradient);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25) inset;
+  font-family: var(--main-titles);
 }
 
 .active {

@@ -3,11 +3,16 @@
     <div class="card chat-card">
       <div id="userBox">
         <ButtonBackChat />
-        <span class="material-symbols-outlined"> account_circle </span>
-        <div class="modifyPicture">
-          <label for="files" class="btn">Modifier la photo de profil</label>
-          <input id="files" style="visibility: hidden" type="file" />
+        <div class="d-flex justify-content-center">
+          <span class="material-symbols-outlined"> account_circle </span>
         </div>
+        <div class="d-flex justify-content-center">
+          <div class="modifyPicture">
+            <label for="files" class="btn">Modifier la photo de profil</label>
+            <input id="files" style="visibility: hidden" type="file" />
+          </div>
+        </div>
+
         <TitleChat text="Vos données personnelles" />
 
         <InputUser title="Nom" value="Cuche" />
@@ -52,4 +57,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.btn {
+  text-align: center;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+</style>

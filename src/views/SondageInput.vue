@@ -1,5 +1,5 @@
 <template>
-  <main class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
       <div class="col">
         <NavPoll />
@@ -7,7 +7,7 @@
         <InputPollBox />
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>

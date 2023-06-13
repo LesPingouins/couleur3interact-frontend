@@ -14,6 +14,7 @@ export default {
 </script>
 <style scoped>
 .navbar {
+  margin-top: 20px;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;

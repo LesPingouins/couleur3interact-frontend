@@ -32,6 +32,8 @@ export default {
     },
   },
 };
+
+//DARK MODE
 </script>
 
 <style scoped>

@@ -17,11 +17,7 @@ export default {
 
 <style scoped>
 .container-fluid {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 92, 0, 1),
-    rgba(255, 159, 129, 1)
-  );
+  background: var(--red-gradient-op);
   padding-bottom: 5%;
   padding-top: 5%;
 }

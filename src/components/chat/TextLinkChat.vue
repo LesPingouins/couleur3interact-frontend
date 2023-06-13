@@ -27,4 +27,7 @@ a {
   text-decoration: none;
   color: var(--red);
 }
+p {
+  font-family: var(--small-text);
+}
 </style>

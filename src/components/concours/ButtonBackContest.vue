@@ -1,7 +1,7 @@
 <template>
   <div class="buttonbackcontest d-flex">
     <span class="material-symbols-outlined"> chevron_left </span>
-    {{ buttonText }}
+    <p>{{ buttonText }}</p>
   </div>
 </template>
 
@@ -22,11 +22,15 @@ export default {
 .buttonbackcontest {
   background: none;
   border: none;
-  margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer;
+  font-family: var(--medium-text);
 }
 .material-symbols-outlined {
   color: var(--green);
+  font-size: 50px;
+}
+p {
+  padding-top: 12px;
 }
 </style>

@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .container-fluid {
-  background-color: var(--white);
+  background: var(--white);
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 1%;
@@ -40,10 +40,13 @@ export default {
 }
 
 .material-symbols-outlined {
-  font-size: 40px;
+  font-size: 35px;
+  padding-top: 5px;
   padding-right: 10px;
+  color: var(--black);
 }
 .connect {
-  font-size: 20px;
+  font-size: var(--big-text);
+  color: var(--black);
 }
 </style>

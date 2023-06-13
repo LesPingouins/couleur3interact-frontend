@@ -21,4 +21,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+p {
+  font-family: var(--medium-text);
+}
+</style>

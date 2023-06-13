@@ -24,6 +24,7 @@ export default {
 <style scoped>
 .inputpoll-container {
   margin-bottom: 20px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
 }

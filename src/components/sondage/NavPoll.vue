@@ -58,11 +58,14 @@ export default {
 <style scoped>
 .navbar {
   background-color: var(--white);
+  color: var(--black);
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2%;
   padding-bottom: 2%;
   box-shadow: 0px 15px 8px rgba(0, 0, 0, 0.25);
+  font-family: var(--big-text);
+  margin-bottom: 20px;
 }
 .material-symbols-outlined {
   border-radius: 99px;
@@ -76,7 +79,6 @@ export default {
 .nav-item {
   cursor: pointer;
 }
-
 .nav-arrow {
   background: none;
   border: none;

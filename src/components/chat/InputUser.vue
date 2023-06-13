@@ -1,95 +1,95 @@
 <template>
-	<div class="input-container">
-		<div class="input-info">
-			<p>{{ title }}</p>
-			<p v-if="!isEditing" @click="toggleEditing" class="input-value">
-				{{ value }}
-			</p>
-			<input
-				v-if="isEditing"
-				v-model="editedValue"
-				@keydown.enter="saveValue"
-				ref="input"
-				:readonly="!isEditing"
-			/>
-		</div>
-		<div class="edit-icon" @click="toggleEditing">
-			<i class="fa" :class="isEditing ? 'fa-check' : 'fa-pencil'"></i>
-		</div>
-	</div>
+  <div class="input-container">
+    <div class="input-info">
+      <p>{{ title }}</p>
+      <p v-if="!isEditing" @click="toggleEditing" class="input-value">
+        {{ value }}
+      </p>
+      <input
+        v-if="isEditing"
+        v-model="editedValue"
+        @keydown.enter="saveValue"
+        ref="input"
+        :readonly="!isEditing"
+      />
+    </div>
+    <div class="edit-icon" @click="toggleEditing">
+      <i class="fa" :class="isEditing ? 'fa-check' : 'fa-pencil'"></i>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-	name: "EditableInput",
-	data() {
-		return {
-			isEditing: false,
-			editedValue: "",
-		};
-	},
-	props: {
-		title: {
-			type: String,
-			required: true,
-		},
-		value: {
-			type: String,
-			required: true,
-		},
-	},
-	methods: {
-		toggleEditing() {
-			if (!this.isEditing) {
-				this.isEditing = true;
-				this.editedValue = this.value;
-				this.$nextTick(() => {
-					this.$refs.input.focus();
-				});
-			} else {
-				this.isEditing = false;
-			}
-		},
-		saveValue() {
-			if (this.editedValue.trim() !== "") {
-				this.$emit("update:value", this.editedValue);
-			}
-			this.isEditing = false;
-		},
-	},
+  name: "EditableInput",
+  data() {
+    return {
+      isEditing: false,
+      editedValue: "",
+    };
+  },
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    value: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    toggleEditing() {
+      if (!this.isEditing) {
+        this.isEditing = true;
+        this.editedValue = this.value;
+        this.$nextTick(() => {
+          this.$refs.input.focus();
+        });
+      } else {
+        this.isEditing = false;
+      }
+    },
+    saveValue() {
+      if (this.editedValue.trim() !== "") {
+        this.$emit("update:value", this.editedValue);
+      }
+      this.isEditing = false;
+    },
+  },
 };
 </script>
 
 <style scoped>
 .input-container {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .input-info {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .input-info p {
-	margin: 0;
-	padding-right: 10px;
-	cursor: pointer;
+  margin: 0;
+  padding-right: 10px;
+  cursor: pointer;
 }
 
 .input-value {
-	color: #848484;
+  color: #848484;
 }
 
 .edit-icon {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .fa-pencil {
-	color: orangered;
+  color: orangered;
 }
 
 .fa-check {
-	color: green;
+  color: green;
 }
 </style>

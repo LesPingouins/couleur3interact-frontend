@@ -40,12 +40,14 @@ export default {
 .bargraphresult .name {
   opacity: 1;
 }
-
+.bargraphresult {
+  font-family: var(--big-text);
+}
 .bargraphresult .bar {
   border-radius: 99px 0px 0px 99px;
   height: 55px;
   top: 55px;
-  overflow: hidden;
+
   position: relative;
   width: 0;
   z-index: 1;
@@ -64,6 +66,7 @@ export default {
   position: absolute;
   left: 7%;
   top: 27%;
+  padding-left: 15px;
 }
 
 .bargraphresult .bar-back::after {
@@ -72,5 +75,6 @@ export default {
   position: absolute;
   right: 4%;
   top: 27%;
+  padding-right: 15px;
 }
 </style>

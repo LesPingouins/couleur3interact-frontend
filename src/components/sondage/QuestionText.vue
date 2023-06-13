@@ -1,7 +1,7 @@
 <template>
-  <p :class="role">
+  <h3 :class="role">
     {{ texte }}
-  </p>
+  </h3>
 </template>
 
 <script setup>

@@ -31,8 +31,10 @@
           voteCount="120"
           color="var(--yellow-pink-gradient)"
         />
-
-        <ButtonPoll buttonText="Prochain sondage" />
+        <br />
+        <div class="d-flex justify-content-center">
+          <ButtonPoll buttonText="Prochain sondage" />
+        </div>
       </div>
     </div>
   </div>
@@ -49,4 +51,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.container-fluid {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+</style>

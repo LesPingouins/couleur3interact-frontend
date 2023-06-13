@@ -21,7 +21,9 @@
             link="https://www.example.com"
           />
         </div>
-        <ButtonChat buttonText="Je me connecte!" />
+        <div class="pb-2 pt-4">
+          <ButtonChat buttonText="Je me connecte!" />
+        </div>
         <div class="d-flex justify-content-center align-self-end">
           <TextChat class="textChat" text="Vous n'avez pas de compte ?" />
         </div>

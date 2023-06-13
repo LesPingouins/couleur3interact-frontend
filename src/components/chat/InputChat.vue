@@ -31,5 +31,6 @@ export default {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  font-family: var(--medium-text);
 }
 </style>

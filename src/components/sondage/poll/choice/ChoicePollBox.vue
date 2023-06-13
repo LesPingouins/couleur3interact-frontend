@@ -6,6 +6,7 @@
           texte="Quel genre de musique préfériez vous entendre sur
 				Couleur 3 ?"
         />
+
         <div class="choixSondage d-flex justify-content-between">
           <ChoicePoll
             class="active choix"

@@ -31,5 +31,12 @@ export default {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
+}
+.inputcontest-label {
+  font-family: var(--medium-text);
+}
+.text-input {
+  font-family: var(--medium-text);
 }
 </style>

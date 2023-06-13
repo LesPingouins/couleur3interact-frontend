@@ -27,11 +27,10 @@ export default {
 </script>
 
 <style scoped>
-.choicecontest-btn {
-  border-radius: 20px 20px 20px 20px;
+button {
+  border-radius: 20px 20px 20px 20px !important;
   height: 125px;
   width: 100%;
-  color: var(--white);
   border: none;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,6 +39,6 @@ export default {
 }
 span {
   color: var(--black);
-  font-size: 20px;
+  font-family: var(--main-titles);
 }
 </style>

@@ -11,17 +11,12 @@ export default {
 </script>
 
 <style scoped>
-.choice-btn {
-  border-radius: 99px;
-  background: var(--blue-gradient);
-  color: var(--white);
-  width: 50%;
-  box-shadow: none;
-  border: none;
+button {
+  background: var(--grey) !important;
 }
-.choice-btn:hover {
-  background: var(--white);
-  color: var(--blue);
-  border: 2px solid var(--blue);
+button:hover {
+  background: var(--white) !important;
+  border: 2px solid var(--grey) !important;
+  color: var(--grey) !important;
 }
 </style>

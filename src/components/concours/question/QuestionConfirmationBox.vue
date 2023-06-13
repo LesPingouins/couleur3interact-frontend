@@ -4,12 +4,15 @@
       <div id="questionConfirmationBox">
         <ButtonBackContest />
         <TitleContest text="Merci de votre inscription au concours !" />
+        <br />
         <TitleContest
           text="Vous avez reçu un mail de confirmation sur votre boîte mail privé."
         />
+        <br />
         <TitleContest
           text="Le gagnant du concours recevra toutes les infos nécessaires par mail le jour du tirage !"
         />
+        <br />
         <ButtonContest buttonText="Retourner au chat" />
       </div>
     </div>

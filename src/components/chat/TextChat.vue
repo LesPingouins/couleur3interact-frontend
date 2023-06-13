@@ -1,7 +1,7 @@
 <template>
-  <p :class="role">
+  <h3 :class="role">
     {{ text }}
-  </p>
+  </h3>
 </template>
 
 <script>
@@ -21,8 +21,4 @@ export default {
 };
 </script>
 
-<style scoped>
-p {
-  font-size: 25px;
-}
-</style>
+<style scoped></style>

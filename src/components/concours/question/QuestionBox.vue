@@ -13,7 +13,9 @@
           label="Votre artiste préféré *"
           placeholder="Saisissez votre artiste préféré"
         />
-        <ButtonContest buttonText="Valider" />
+        <div class="d-flex justify-content-center">
+          <ButtonContest buttonText="Valider" />
+        </div>
       </div>
     </div>
   </div>
