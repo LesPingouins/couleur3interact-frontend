@@ -37,7 +37,7 @@ import CheckboxButton from "../CheckboxButton.vue";
 import TextLinkChat from "../TextLinkChat.vue";
 import ButtonChat from "../ButtonChat.vue";
 import TextChat from "../TextChat.vue";
-//import router from "../../../router/index"
+import router from "/src/router/index"
 import store from '/src/store/index';
 
 export default {
@@ -54,6 +54,8 @@ export default {
 		submitForm() {
 			const form = document.querySelector("#form");
 			const formData = new FormData(form);
+			const router = this.$router;
+
 			axios
 				.post(import.meta.env.VITE_BACKEND_URL + "/login",
 					{
@@ -61,19 +63,18 @@ export default {
 						password: this.$refs.password.value
 					})
 				.then(function (response) {
-					if (response.status === 200) {
-						//console.log(response.data);
-						store.commit("saveLogin", response.data);
-						//store.saveLogin(response.data)
-						//this.$store.saveLogin(response.data);
 
-						//router.push({ name: 'Chat' })
+					if (response.status === 200) {
+						store.commit("saveLogin", response.data);
+						router.push({ name: 'Chat' })
 					}
 				})
 
 		}
+	},
+	mounted() {
+		console.log(this.$router)
 	}
-
 };
 </script>
 
