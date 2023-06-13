@@ -4,7 +4,7 @@
       <div id="chatBox" class="chat-messages p-4">
         <div v-for="message in messages" ref="messageContainers" class="pb-4">
           <div class="flex-shrink-1 message-box rounded">
-            <i> {{ getTime() }}</i> - salut : {{ message }}
+            <i> {{ message.time }}</i> - {{ message.username }} : {{ message.message }}
           </div>
         </div>
       </div>
@@ -22,6 +22,7 @@
 <script>
 import axios from "axios";
 import moment from 'moment';
+import store from "../store";
 
 export default {
   props: ["chat_id"],
@@ -64,7 +65,10 @@ export default {
       axios
         .post(
           this.$store.state.backendUrl + "/chat",
-          { message: this.message },
+          {
+            message: this.message,
+            username: this.username
+          },
           {
             headers: {
               "Content-Type": "application/json",
@@ -92,8 +96,11 @@ export default {
     async startWebSocket() {
       console.log("startWebSocket");
       Echo.channel("chat").listen("MessageSent", (e) => {
-        this.messages.push(e.message);
-        this.scrollToLastMessage();
+        e.time = moment().format("HH:mm");
+        console.log(e)
+        this.messages.push(e);
+        console.log(this.messages)
+        //this.scrollToLastMessage();
       });
 
       //console.log(Echo.channel("poll").listen("PollSent"))
@@ -111,6 +118,7 @@ export default {
   },
   mounted() {
     this.startWebSocket();
+    this.username = store.state.username;
   },
 };
 </script>

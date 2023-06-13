@@ -15,7 +15,7 @@
 					<TextLinkChat linkText="Mot de passe oublié ?" link="https://www.example.com" />
 				</div>
 				<div class="pb-2 pt-4">
-					<ButtonChat @click="submit" buttonText="Je me connecte!" />
+					<ButtonChat @click="submitForm" buttonText="Je me connecte!" />
 				</div>
 
 				<div class="d-flex justify-content-center align-self-end">
@@ -38,7 +38,8 @@ import CheckboxButton from "../CheckboxButton.vue";
 import TextLinkChat from "../TextLinkChat.vue";
 import ButtonChat from "../ButtonChat.vue";
 import TextChat from "../TextChat.vue";
-import router from "../../../router/index"
+//import router from "../../../router/index"
+import store from '/src/store/index';
 
 export default {
 	components: {
@@ -51,10 +52,9 @@ export default {
 		TextChat,
 	},
 	methods: {
-		submit() {
+		submitForm() {
 			const form = document.querySelector("#form");
 			const formData = new FormData(form);
-			console.log();
 			axios
 				.post(import.meta.env.VITE_BACKEND_URL + "/login",
 					{
@@ -63,8 +63,12 @@ export default {
 					})
 				.then(function (response) {
 					if (response.status === 200) {
-						console.log(response);
-						router.push({ name: 'Chat' })
+						//console.log(response.data);
+						store.commit("saveLogin", response.data);
+						//store.saveLogin(response.data)
+						//this.$store.saveLogin(response.data);
+
+						//router.push({ name: 'Chat' })
 					}
 				})
 
