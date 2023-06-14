@@ -100,5 +100,6 @@ input:checked + .slider:before {
 }
 p {
   font-family: var(--big-text);
+  color: var(--black);
 }
 </style>

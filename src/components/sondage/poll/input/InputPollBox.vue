@@ -1,8 +1,8 @@
-<template >
+<template>
   <div v-if="!is_predefined" class="col-12">
     <div class="container-fluid">
       <div id="pollBox d-flex">
-        <QuestionText :texte=poll.question />
+        <QuestionText :texte="poll.question" />
       </div>
 
       <InputPoll placeholder="Entrez ici votre réponse..." />
@@ -27,7 +27,7 @@ export default {
     poll: {
       type: Object,
       default: "",
-    }
+    },
   },
   components: { ButtonPoll, QuestionText, InputPoll },
 };
@@ -36,5 +36,9 @@ export default {
 <style scoped>
 .ButtonPoll {
   width: 100% !important;
+}
+.col-12 {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 </style>

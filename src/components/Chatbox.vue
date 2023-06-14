@@ -14,7 +14,13 @@
 
     <div class="flex-grow-0border-top inputMessage">
       <div class="input-group">
-        <input type="text" @keyup.enter="onSubmit" v-model="message" class="form-control" placeholder="Écrire" />
+        <input
+          type="text"
+          @keyup.enter="onSubmit"
+          v-model="message"
+          class="form-control"
+          placeholder="Écrire"
+        />
       </div>
     </div>
   </div>
@@ -22,14 +28,14 @@
 
 <script>
 import axios from "axios";
-import moment from 'moment';
+import moment from "moment";
 import router from "../router";
 import store from "../store";
 
 export default {
   props: ["chat_id"],
-  setup() { },
-  created: function () { },
+  setup() {},
+  created: function () {},
   data() {
     console.log();
     return {
@@ -71,7 +77,7 @@ export default {
               this.$store.state.backendUrl + "/chat",
               {
                 message: this.message,
-                username: this.username
+                username: this.username,
               },
               {
                 headers: {
@@ -92,9 +98,8 @@ export default {
               this.errorMgs = error.response.data.error;
               this.isSendingForm = false;
             });
-
         } else {
-          router.push("ChoixConnexion")
+          router.push("ChoixConnexion");
         }
       }
     },
@@ -106,8 +111,6 @@ export default {
         this.messages.push(e);
         this.scrollToLastMessage();
       });
-
-
     },
   },
   watch: {
@@ -136,6 +139,8 @@ input {
   box-shadow: none !important;
   padding-left: 21px !important;
   width: 100% !important;
+  background-color: var(--white) !important;
+  color: var(--white) !important;
 }
 
 .inputMessage {
@@ -148,22 +153,27 @@ input {
 button {
   opacity: 0%;
 }
-
-.form-control:focus {
+::placeholder {
+  color: var(--black) !important;
+}
+::placeholder .form-control:focus {
   border: 2px solid var(--black);
   box-shadow: none;
 }
 
 .chatHour {
   font-family: var(--medium-text);
+  color: var(--black);
 }
 
 .userChat {
   font-family: var(--medium-text);
+  color: var(--black);
 }
 
 .messageChat {
   font-family: var(--chat-message);
+  color: var(--black);
 }
 
 .col-12 {

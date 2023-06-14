@@ -97,6 +97,7 @@ main {
   margin-right: 20%;
   text-decoration: underline !important;
   border: none !important;
+  color: var(--black) !important;
 }
 .material-symbols-outlined {
   font-size: 100px;

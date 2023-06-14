@@ -1,7 +1,13 @@
 <template>
   <div class="inputchat-container">
     <label class="inputchat-label">{{ label }}</label>
-    <input :type=type :name=name class="text-input" v-model="value" :placeholder="placeholder" />
+    <input
+      :type="type"
+      :name="name"
+      class="text-input"
+      v-model="value"
+      :placeholder="placeholder"
+    />
   </div>
 </template>
 
@@ -40,5 +46,6 @@ export default {
   display: flex;
   flex-direction: column;
   font-family: var(--medium-text);
+  color: var(--black);
 }
 </style>
