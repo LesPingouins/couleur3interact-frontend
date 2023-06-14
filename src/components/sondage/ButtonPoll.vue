@@ -17,4 +17,15 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+button {
+  margin-bottom: 10px !important;
+  background: var(--blue-gradient) !important;
+  border: 3px solid var(--blue) !important;
+}
+button:hover {
+  color: var(--blue);
+  background: var(--white) !important;
+  border: 3px solid var(--blue) !important;
+}
+</style>

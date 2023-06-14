@@ -1,6 +1,10 @@
 <template>
   <div class="container-fluid d-flex justify-content-between">
-    <div class="nav-link" @click="goTo()" :class="$route.name == 'ChoixConnexion' ? 'active' : ''">
+    <div
+      class="nav-link"
+      @click="goTo()"
+      :class="$route.name == 'ChoixConnexion' ? 'active' : ''"
+    >
       <div class="d-flex justify-content-between align-self-center">
         <span class="material-symbols-outlined"> account_circle </span>
         <div class="d-flex connect align-self-center">
@@ -8,8 +12,6 @@
         </div>
       </div>
     </div>
-
-
 
     <div class="nav-item nav-link d-flex align-self-center">
       <ButtonDarkMode />
@@ -25,33 +27,31 @@ export default {
   name: "AppHeader",
   data() {
     return {
-      username: store.state.username !== "" ? store.state.username : "Me connecter",
-    }
-
+      username:
+        store.state.username !== "" ? store.state.username : "Me connecter",
+    };
   },
   watch: {
     "$store.state.username": function (val) {
-      console.log(val)
-      if (store.state.username !== "") this.username = store.state.username
-      else this.username = "Me connecter"
-
-    }
-
+      console.log(val);
+      if (store.state.username !== "") this.username = store.state.username;
+      else this.username = "Me connecter";
+    },
   },
   components: { ButtonDarkMode },
   methods: {
     goTo() {
       if (store.state.username !== "") {
-        router.push("Utilisateur")
+        router.push("Utilisateur");
       } else {
-        router.push("ChoixConnexion")
+        router.push("ChoixConnexion");
       }
-    }
+    },
   },
   mounted() {
-    console.log(this.username)
-    console.log(store.state)
-  }
+    console.log(this.username);
+    console.log(store.state);
+  },
 };
 </script>
 
@@ -69,10 +69,12 @@ export default {
   padding-top: 5px;
   padding-right: 10px;
   color: var(--black);
+  cursor: pointer;
 }
 
 .connect {
   font-size: var(--big-text);
   color: var(--black);
+  cursor: pointer;
 }
 </style>
