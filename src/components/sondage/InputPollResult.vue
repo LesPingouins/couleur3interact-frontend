@@ -1,7 +1,5 @@
 <template>
-  <li>
-    <a :style="{ color: textColor, fontSize: textSize }">{{ text }}</a>
-  </li>
+  <a :style="{ color: textColor, fontSize: textSize }">{{ text }}</a>
 </template>
 
 <script>
