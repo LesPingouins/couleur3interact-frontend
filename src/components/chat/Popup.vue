@@ -6,11 +6,15 @@
         <p>{{ this.counter }} {{ label }}</p>
         <i :class="chevronClass"></i>
       </div>
-      <TitleChat :text=event.question />
+      <TitleChat :text="event.question" />
       <div class="content" :class="{ expanded: isExpanded }">
         <TextChat :text="this.event.type_id === 1 ? 'Sondage' : 'Concours'" />
         <ButtonPopup class="annuler" buttonText="Non merci" />
-        <ButtonPopup class="valider" @click="goTo()" buttonText="Je participe" />
+        <ButtonPopup
+          class="valider"
+          @click="goTo()"
+          buttonText="Je participe"
+        />
       </div>
     </div>
   </div>
@@ -22,7 +26,6 @@ import TextChat from "./TextChat.vue";
 import ButtonPopup from "./ButtonPopup.vue";
 import router from "../../router";
 import axios from "axios";
-
 
 export default {
   name: "Popup",
@@ -57,62 +60,71 @@ export default {
     },
     setTimer() {
       let date2 = new Date(this.event.created_at);
-      date2.setSeconds(date2.getSeconds() + this.event.duration)
+      date2.setSeconds(date2.getSeconds() + this.event.duration);
 
       let date1 = new Date();
 
-      let distance = (date2.getTime() - date1.getTime());
+      let distance = date2.getTime() - date1.getTime();
 
       let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       if (seconds !== 0) {
         this.counter = seconds;
-        this.label = " secondes restantes"
+        this.label = " secondes restantes";
       }
       if (minutes !== 0) {
         this.counter = minutes;
-        this.label = " minutes restantes"
+        this.label = " minutes restantes";
       }
       if (hours !== 0) {
         this.counter = hours;
-        this.label = " heures restantes"
+        this.label = " heures restantes";
       }
       if (days !== 0) {
         this.counter = days;
-        this.label = " jours restants"
+        this.label = " jours restants";
       }
 
       if (date1 > date2) {
-        this.counter = ""
-        this.label = "Expiré"
+        this.counter = "";
+        this.label = "Expiré";
         this.isPopupShow = false;
 
         axios
-          .post(import.meta.env.VITE_BACKEND_URL + "/polls/" + this.event.id + "/inactive")
+          .post(
+            import.meta.env.VITE_BACKEND_URL +
+              "/polls/" +
+              this.event.id +
+              "/inactive"
+          )
           .then(function (response) {
             if (response.status === 200) {
-              console.log(response)
+              console.log(response);
             }
-          })
+          });
 
         this.stopInterval(this.interval);
       }
     },
     goTo() {
-      router.push("Sondage/?id=" + this.event.id)
+      router.push("Sondage/?id=" + this.event.id);
     },
     stopInterval(id) {
-      clearInterval(id)
-    }
+      clearInterval(id);
+    },
   },
   mounted() {
-    this.interval = setInterval(() => { this.setTimer() }, 1000);
+    this.interval = setInterval(() => {
+      this.setTimer();
+    }, 1000);
   },
   beforeUnmount() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   },
 };
 </script>
@@ -135,6 +147,7 @@ i {
   border-radius: 20px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
   margin-top: 10px;
+  background: var(--white);
 }
 
 .content {
@@ -153,6 +166,7 @@ i {
 
 p {
   font-family: var(--medium-text) !important;
+  color: var(--black);
 }
 
 .annuler {

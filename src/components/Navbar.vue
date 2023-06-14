@@ -1,13 +1,13 @@
 <template>
   <nav
     class="navbar navbar-expand-lg navbar-light rounded-pill"
-    :style="{ background: navbarBackgroundColor }"
+    :style="{ background: navbarBackgroundColor, color: textColor }"
   >
     <div class="navbar-nav flex-row justify-content-around w-100 shadow-inner">
       <router-link
         class="nav-item nav-link text-white"
         @click="changeActiveElement(1)"
-        :class="this.activeElement1 === true ? 'active' : ''"
+        :class="activeElement1 === true ? 'active' : ''"
         aria-current="page"
         :to="{ name: 'Chat' }"
         >Chat</router-link
@@ -16,7 +16,7 @@
       <router-link
         class="nav-item nav-link text-white"
         @click="changeActiveElement(2)"
-        :class="this.activeElement2 === true ? 'active' : ''"
+        :class="activeElement2 === true ? 'active' : ''"
         aria-current="page"
         :to="{ name: 'Concours' }"
         >Concours</router-link
@@ -25,7 +25,7 @@
       <router-link
         class="nav-item nav-link text-white"
         @click="changeActiveElement(3)"
-        :class="this.activeElement3 === true ? 'active' : ''"
+        :class="activeElement3 === true ? 'active' : ''"
         aria-current="page"
         :to="{ name: 'Sondage' }"
         >Sondage</router-link
@@ -45,6 +45,7 @@ export default {
       activeElement2: false,
       activeElement3: false,
       navbarBackgroundColor: "var(--red-gradient)",
+      textColor: "var(--red)",
     };
   },
   methods: {
@@ -58,16 +59,19 @@ export default {
         this.activeElement2 = false;
         this.activeElement3 = false;
         this.navbarBackgroundColor = "var(--red-gradient)";
+        this.textColor = "var(--red)";
       } else if (id === 2) {
         this.activeElement1 = false;
         this.activeElement2 = true;
         this.activeElement3 = false;
         this.navbarBackgroundColor = "var(--green-gradient)";
+        this.textColor = "var(--green)";
       } else {
         this.activeElement1 = false;
         this.activeElement2 = false;
         this.activeElement3 = true;
         this.navbarBackgroundColor = "var(--blue-gradient)";
+        this.textColor = "var(--blue)";
       }
     },
   },
@@ -86,26 +90,21 @@ export default {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25) inset;
   font-family: var(--main-titles);
   position: relative;
-  /* Ajoutez cette ligne pour positionner correctement le carré blanc */
-}
-
-.navbar-backgroundColor {
-  background: var(--red-gradient);
 }
 
 .active {
-  color: var(--red) !important;
+  color: var(--black) !important;
 }
 
 .active-indicator {
   position: absolute;
-  bottom: 8px; /* Ajustez la position verticale du carré blanc selon vos préférences */
+  bottom: 8px;
   left: 0;
   width: 30%;
-  height: 40px; /* Ajustez la hauteur du carré blanc selon vos préférences */
+  height: 40px;
   text-align: center;
   background: var(--white);
-  transition: transform 0.3s ease; /* Ajoutez une transition pour un mouvement fluide */
+  transition: transform 0.3s ease;
   border: none !important;
   background-color: var(--white) !important;
   text-align: center !important;
@@ -114,19 +113,17 @@ export default {
 }
 
 .nav-item:nth-child(1).active ~ .active-indicator {
-  transform: translateX(3.3333%); /* Déplacez le carré vers l'élément 'Chat' */
+  transform: translateX(3.3333%);
   width: 30% !important;
 }
 
 .nav-item:nth-child(2).active ~ .active-indicator {
-  transform: translateX(
-    115.3333%
-  ); /* Déplacez le carré vers l'élément 'Concours' */
+  transform: translateX(115.3333%);
   width: 30% !important;
 }
 
 .nav-item:nth-child(3).active ~ .active-indicator {
-  transform: translateX(230%); /* Déplacez le carré vers l'élément 'Sondage' */
+  transform: translateX(230%);
   width: 30% !important;
 }
 </style>
