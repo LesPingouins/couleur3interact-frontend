@@ -42,16 +42,13 @@ export default {
   methods: {
     goTo() {
       if (store.state.username !== "") {
-        router.push("Utilisateur");
+        router.push("/Utilisateur");
       } else {
-        router.push("ChoixConnexion");
+        router.push("/ChoixConnexion");
       }
     },
   },
-  mounted() {
-    console.log(this.username);
-    console.log(store.state);
-  },
+  mounted() {},
 };
 </script>
 
