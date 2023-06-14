@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import router from '../../router';
+import router from "../../router";
 
 export default {
   name: "ButtonBackContest",
@@ -19,9 +19,9 @@ export default {
   },
   methods: {
     goBack() {
-      router.go(-1)
-    }
-  }
+      router.go(-1);
+    },
+  },
 };
 </script>
 

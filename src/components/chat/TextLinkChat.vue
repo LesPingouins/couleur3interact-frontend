@@ -30,5 +30,6 @@ a {
 
 p {
   font-family: var(--small-text);
+  cursor: pointer;
 }
 </style>

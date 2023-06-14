@@ -13,11 +13,11 @@ export default {
     },
     isItemsEnabled: {
       type: Boolean,
-    }
+    },
   },
   computed: {
     backgroundStyle() {
-      console.log(this.isItemsEnabled)
+      console.log(this.isItemsEnabled);
       console.log(this.backgroundColor);
       return `background: ${this.backgroundColor} `;
     },
@@ -26,9 +26,14 @@ export default {
 </script>
 
 <style scoped>
+button {
+  margin-bottom: 10px !important;
+  background: var(--grey-darker) !important;
+  border: 3px solid var(--grey-darker) !important;
+}
 button:hover {
+  color: var(--grey-darker);
   background: var(--white) !important;
-  border: 2px solid var(--grey) !important;
-  color: var(--grey) !important;
+  border: 3px solid var(--grey-darker) !important;
 }
 </style>
