@@ -1,13 +1,17 @@
-<template >
+<template>
   <div v-if="!is_predefined" class="col-12">
     <div class="container-fluid">
       <div id="pollBox d-flex">
-        <QuestionText :texte=poll.question />
+        <QuestionText :texte="poll.question" />
       </div>
 
-      <InputPoll placeholder="Entrez ici votre réponse..." />
+      <InputPoll ref="answer" placeholder="Entrez ici votre réponse..." />
       <div class="d-flex justify-content-center">
-        <ButtonPoll class="ButtonPoll" buttonText="Valider" />
+        <ButtonPoll
+          @click="sendPoll()"
+          class="ButtonPoll"
+          buttonText="Valider"
+        />
       </div>
     </div>
   </div>
@@ -17,6 +21,9 @@
 import ButtonPoll from "../../ButtonPoll.vue";
 import QuestionText from "../../QuestionText.vue";
 import InputPoll from "../../InputPoll.vue";
+import router from "../../../../router";
+import axios from "axios";
+import store from "../../../../store";
 
 export default {
   name: "PollBox",
@@ -27,7 +34,28 @@ export default {
     poll: {
       type: Object,
       default: "",
-    }
+    },
+  },
+  methods: {
+    sendPoll() {
+      if (this.$refs.answer.inputValue) {
+        const pollId = this.poll.id;
+        axios
+          .post(
+            import.meta.env.VITE_BACKEND_URL + "/polls/" + pollId + "/answers",
+            {
+              answer: this.$refs.answer.inputValue,
+              user_id: store.state.id,
+              event_id: pollId,
+            }
+          )
+          .then(function (response) {
+            if (response.status === 201) {
+              router.push("/SondageInputResultat/" + pollId);
+            }
+          });
+      }
+    },
   },
   components: { ButtonPoll, QuestionText, InputPoll },
 };
