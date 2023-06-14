@@ -2,19 +2,22 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <NavPoll />
-        <InputPollResultBox />
+        <InputPollResultBox :id-poll="this.idPoll" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import NavPoll from "../components/sondage/NavPoll.vue";
 import InputPollResultBox from "../components/sondage/poll/input/InputPollResultBox.vue";
 
 export default {
-  components: { NavPoll, InputPollResultBox },
+  components: { InputPollResultBox },
+  data() {
+    return {
+      idPoll: null,
+    };
+  },
 };
 </script>
 
