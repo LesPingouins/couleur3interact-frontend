@@ -1,9 +1,13 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light rounded-pill">
+  <nav
+    class="navbar navbar-expand-lg navbar-light rounded-pill"
+    :style="{ background: navbarBackgroundColor }"
+  >
     <div class="navbar-nav flex-row justify-content-around w-100 shadow-inner">
       <router-link
         class="nav-item nav-link text-white"
-        :class="$route.name == 'Chat' ? 'active' : ''"
+        @click="changeActiveElement(1)"
+        :class="this.activeElement1 === true ? 'active' : ''"
         aria-current="page"
         :to="{ name: 'Chat' }"
         >Chat</router-link
@@ -11,7 +15,8 @@
 
       <router-link
         class="nav-item nav-link text-white"
-        :class="$route.name == 'Concours' ? 'active' : ''"
+        @click="changeActiveElement(2)"
+        :class="this.activeElement2 === true ? 'active' : ''"
         aria-current="page"
         :to="{ name: 'Concours' }"
         >Concours</router-link
@@ -19,7 +24,8 @@
 
       <router-link
         class="nav-item nav-link text-white"
-        :class="$route.name == 'Sondage' ? 'active' : ''"
+        @click="changeActiveElement(3)"
+        :class="this.activeElement3 === true ? 'active' : ''"
         aria-current="page"
         :to="{ name: 'Sondage' }"
         >Sondage</router-link
@@ -35,12 +41,34 @@ export default {
   data() {
     return {
       notifications: [],
+      activeElement1: true,
+      activeElement2: false,
+      activeElement3: false,
+      navbarBackgroundColor: "var(--red-gradient)",
     };
   },
   methods: {
     logout() {
       //this.$store.commit("Logout");
       //this.$router.push("/login");
+    },
+    changeActiveElement(id) {
+      if (id === 1) {
+        this.activeElement1 = true;
+        this.activeElement2 = false;
+        this.activeElement3 = false;
+        this.navbarBackgroundColor = "var(--red-gradient)";
+      } else if (id === 2) {
+        this.activeElement1 = false;
+        this.activeElement2 = true;
+        this.activeElement3 = false;
+        this.navbarBackgroundColor = "var(--green-gradient)";
+      } else {
+        this.activeElement1 = false;
+        this.activeElement2 = false;
+        this.activeElement3 = true;
+        this.navbarBackgroundColor = "var(--blue-gradient)";
+      }
     },
   },
 };
@@ -59,6 +87,10 @@ export default {
   font-family: var(--main-titles);
   position: relative;
   /* Ajoutez cette ligne pour positionner correctement le carré blanc */
+}
+
+.navbar-backgroundColor {
+  background: var(--red-gradient);
 }
 
 .active {
@@ -84,7 +116,6 @@ export default {
 .nav-item:nth-child(1).active ~ .active-indicator {
   transform: translateX(3.3333%); /* Déplacez le carré vers l'élément 'Chat' */
   width: 30% !important;
-  color: red !important;
 }
 
 .nav-item:nth-child(2).active ~ .active-indicator {
