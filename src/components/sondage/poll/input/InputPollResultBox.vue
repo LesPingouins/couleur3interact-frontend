@@ -9,15 +9,20 @@
       </div>
 
       <ul class="cloud">
-        <InputPollResult text="Drill" textColor="#FF003A" textSize="90px" />
-        <InputPollResult text="Hip Hop" textColor="#003BFF" textSize="30px" />
-        <InputPollResult text="DrumNBass" textColor="#00FF6D" textSize="40px" />
-        <InputPollResult text="House" textColor="#F130E9" textSize="20px" />
-        <InputPollResult text="Jazz" textColor="#00FF6D" textSize="60px" />
-        <InputPollResult text="Techno" textColor="#F130E9" textSize="60px" />
+        <li class="answer" v-for="(value, index) in this.answers">
+          <InputPollResult
+            :text="index"
+            :textColor="randomColor()"
+            :textSize="getWeightText(value)"
+          />
+        </li>
       </ul>
 
-      <ButtonPoll buttonText="Prochain sondage" />
+      <ButtonPoll
+        @click="goBackToPolls()"
+        class="buttonBack"
+        buttonText="Revenir aux sondages"
+      />
     </div>
   </div>
 </template>
@@ -26,10 +31,63 @@
 import ButtonPoll from "../../ButtonPoll.vue";
 import QuestionText from "../../QuestionText.vue";
 import InputPollResult from "../../InputPollResult.vue";
+import router from "../../../../router";
+import axios from "axios";
 
 export default {
   name: "PollBox",
   components: { ButtonPoll, QuestionText, InputPollResult },
+  propos: ["idPoll"],
+  data() {
+    return {
+      id: "",
+      colors: [
+        "#FF003A",
+        "#003BFF",
+        "#00FF6D",
+        "#F130E9",
+        "#00FF6D",
+        "#F130E9",
+      ],
+      answers: [],
+    };
+  },
+  methods: {
+    goBackToPolls() {
+      router.push("/Sondage");
+    },
+    randomColor() {
+      return this.colors[Math.floor(Math.random() * this.colors.length)];
+    },
+    getWeightText(weight) {
+      return Math.floor(weight * 1.2 + 60) + "px";
+    },
+    getResultsFromAPoll() {
+      axios
+        .get(
+          this.$store.state.backendUrl + "/polls/" + this.id + "/answers/same",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          if (response.status === 200) {
+            console.log(response.data.answers);
+            this.answers = response.data.answers;
+          }
+        })
+        .catch((error) => {
+          this.ShowError = true;
+          this.errorMgs = error.response.data.error;
+        });
+    },
+  },
+  mounted() {
+    this.id = router.currentRoute.value.params.id;
+    this.getResultsFromAPoll();
+  },
 };
 </script>
 
@@ -43,5 +101,8 @@ ul.cloud {
   justify-content: center;
   line-height: 2.75rem;
   width: 450px;
+}
+.answer {
+  margin-right: 1rem;
 }
 </style>
