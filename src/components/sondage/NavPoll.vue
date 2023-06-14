@@ -70,8 +70,8 @@ export default {
         })
         .then((response) => {
           if (response.status === 200) {
-            console.log(response.data);
             this.polls = response.data;
+            this.$emit("printPoll", this.polls[0].id);
             this.prevIndex = response.data.length - 1;
             if (response.data.length <= 1) this.showItem = false;
             if (response.data.length == 0) this.showActiveItem = false;
@@ -100,6 +100,13 @@ export default {
           this.activeIndex = 0;
         }
       }
+
+      // Mettre à jour les index en fonction de l'élément actif
+      this.prevIndex =
+        (this.activeIndex - 1 + this.polls.length) % this.polls.length;
+      this.nextIndex = (this.activeIndex + 1) % this.polls.length;
+
+      this.$emit("printPoll", this.polls[this.prevIndex].id);
     },
     nextItem() {
       console.log(
@@ -121,9 +128,34 @@ export default {
           this.activeIndex = 1;
         }
       }
+      // Mettre à jour les index en fonction de l'élément actif
+      this.prevIndex =
+        (this.activeIndex - 1 + this.polls.length) % this.polls.length;
+      this.nextIndex = (this.activeIndex + 1) % this.polls.length;
+
+      this.$emit("printPoll", this.polls[this.nextIndex].id);
     },
     getAPoll(event) {
+      const clickedIndex = parseInt(event.target.dataset.index);
+      this.activeIndex = clickedIndex;
+      this.prevIndex =
+        (clickedIndex - 1 + this.polls.length) % this.polls.length;
+      this.nextIndex = (clickedIndex + 1) % this.polls.length;
+
       this.$emit("printPoll", this.polls[event.target.dataset.index].id);
+    },
+    fetchPoll(pollId) {
+      axios
+        .get(this.$store.state.backendUrl + "/polls/" + pollId, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {})
+        .catch((error) => {
+          this.ShowError = true;
+          this.errorMgs = error.response.data.error;
+        });
     },
   },
   mounted() {
