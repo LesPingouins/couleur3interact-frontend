@@ -70,7 +70,7 @@ const routes = [
         component: SondageInput,
       },
       {
-        path: "/SondageInputResultat",
+        path: "/SondageInputResultat/:id",
         name: "SondageInputResultat",
         component: SondageInputResultat,
       },
