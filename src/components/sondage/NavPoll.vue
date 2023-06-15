@@ -4,32 +4,17 @@
       <span class="material-symbols-outlined">arrow_circle_left</span>
     </div>
     <div class="item">
-      <p
-        id="item1"
-        @click="getAPoll($event)"
-        v-show="this.showItem"
-        :data-index="prevIndex"
-      >
+      <p id="item1" @click="getAPoll($event)" v-show="this.showItem" :data-index="prevIndex">
         Sondage {{ prevIndex + 1 }}
       </p>
     </div>
     <div class="item active">
-      <p
-        id="item2"
-        @click="getAPoll($event)"
-        v-show="this.showActiveItem"
-        :data-index="activeIndex"
-      >
+      <p id="item2" @click="getAPoll($event)" v-show="this.showActiveItem" :data-index="activeIndex">
         Sondage {{ activeIndex + 1 }}
       </p>
     </div>
     <div class="item">
-      <p
-        id="item3"
-        @click="getAPoll($event)"
-        v-show="this.showItem"
-        :data-index="nextIndex"
-      >
+      <p id="item3" @click="getAPoll($event)" v-show="this.showItem" :data-index="nextIndex">
         Sondage {{ nextIndex + 1 }}
       </p>
     </div>
@@ -70,7 +55,6 @@ export default {
         })
         .then((response) => {
           if (response.status === 200) {
-            console.log(response.data);
             this.polls = response.data;
             this.$emit("printPoll", this.polls[0].id);
             this.prevIndex = response.data.length - 1;
@@ -170,6 +154,7 @@ export default {
   font-size: 16px;
   text-decoration: var(--blue) wavy underline;
 }
+
 p {
   display: block;
   margin-block-start: 0em;
@@ -182,15 +167,19 @@ p {
   cursor: pointer;
   font-size: 30px;
 }
+
 .material-symbols-outlined:hover {
   color: var(--blue);
 }
+
 .item {
   cursor: pointer;
 }
+
 #item3 {
   margin-left: 50px;
 }
+
 #item1 {
   margin-right: 50px;
 }
