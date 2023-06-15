@@ -130,7 +130,6 @@ export default {
 .form-control {
   background-color: none;
   border: 2px solid var(--black);
-  border-radius: 22px;
 }
 
 input {
@@ -177,9 +176,9 @@ button {
 }
 
 .col-12 {
-  height: 77vh;
+  height: 76vh;
   overflow-y: scroll;
-  scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
+  background: var(--white);
 }
 </style>
