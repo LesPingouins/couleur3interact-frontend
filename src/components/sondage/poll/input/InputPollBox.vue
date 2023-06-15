@@ -65,4 +65,8 @@ export default {
 .ButtonPoll {
   width: 100% !important;
 }
+.col-12 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
 </style>

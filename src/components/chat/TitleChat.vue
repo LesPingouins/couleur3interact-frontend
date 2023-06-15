@@ -21,4 +21,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h2 {
+  color: var(--black) !important;
+}
+</style>

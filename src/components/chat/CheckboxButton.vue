@@ -58,5 +58,6 @@ export default {
 }
 span {
   font-family: var(--small-text) !important;
+  color: var(--black) !important;
 }
 </style>

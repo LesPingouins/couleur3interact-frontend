@@ -104,5 +104,6 @@ input {
 .title {
   font-family: var(--medium-text);
   width: 20vw;
+  color: var(--black);
 }
 </style>

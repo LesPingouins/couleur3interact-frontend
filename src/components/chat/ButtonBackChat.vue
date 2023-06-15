@@ -6,13 +6,12 @@
 </template>
 
 <script>
-
 export default {
   name: "ButtonBackChat",
   methods: {
     goBack() {
-      this.$router.go(-1)
-    }
+      this.$router.go(-1);
+    },
   },
 };
 </script>
@@ -24,6 +23,7 @@ export default {
   margin-bottom: 10px;
   cursor: pointer;
   font-family: var(--medium-text);
+  color: var(--black);
 }
 
 .material-symbols-outlined {
