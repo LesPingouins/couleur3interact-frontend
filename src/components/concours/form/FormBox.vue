@@ -56,23 +56,7 @@ export default {
   },
   methods: {
     sendFormData() {
-      axios
-        .post(import.meta.env.VITE_BACKEND_URL + "/contests/" + this.id, {
-          user_id: store.state.id,
-          lastname: this.$refs.lastname.value,
-          firstname: this.$refs.firstname.value,
-          address: this.$refs.address.value,
-          address_code: this.$refs.address_code.value,
-          city: this.$refs.city.value,
-          phone: this.$refs.phone.value,
-          answer: this.answer,
-          event_id: this.id,
-        })
-        .then(function (response) {
-          if (response.status === 200) {
-            router.push("/ConcoursQuestionConfirmation");
-          }
-        });
+      router.push("/ConcoursQuestionConfirmation");
     },
   },
   mounted() {

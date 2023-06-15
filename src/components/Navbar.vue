@@ -71,6 +71,13 @@ export default {
       }
     },
   },
+  watch: {
+    $route(to, from) {
+      if (to.name === "Chat") this.changeActiveElement(1);
+      if (to.name === "Concours") this.changeActiveElement(2);
+      if (to.name === "Sondage") this.changeActiveElement(3);
+    },
+  },
 };
 </script>
 

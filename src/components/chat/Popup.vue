@@ -105,7 +105,7 @@ export default {
       }
     },
     goTo() {
-      router.push("Sondage/?id=" + this.event.id);
+      router.push("/Sondage/?id=" + this.event.id);
     },
     stopInterval(id) {
       clearInterval(id);

@@ -24,7 +24,7 @@ button {
   border: 3px solid var(--green) !important;
 }
 button:hover {
-  color: var(--red);
+  color: var(--green);
   background: var(--white) !important;
   border: 3px solid var(--green) !important;
 }

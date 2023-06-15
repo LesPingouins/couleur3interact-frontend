@@ -2,10 +2,7 @@
   <div class="col-12">
     <div class="container-fluid">
       <div id="pollBox d-flex">
-        <QuestionText
-          texte="Quel genre de musique préfériez vous entendre sur
-				Couleur 3 ?"
-        />
+        <QuestionText texte="Comment trouvez-vous la musique ?" />
       </div>
 
       <ul class="cloud">

@@ -35,10 +35,7 @@
           <TextChat class="textChat" text="Vous n'avez pas de compte ?" />
         </div>
         <div class="d-flex justify-content-center">
-          <TextLinkChat
-            linkText="Créer un compte"
-            link="https://www.example.com"
-          />
+          <TextLinkChat linkText="Créer un compte" link="/Inscription" />
         </div>
       </div>
     </div>

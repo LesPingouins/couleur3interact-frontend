@@ -70,16 +70,13 @@ export default {
         })
         .then((response) => {
           if (response.status === 200) {
+            console.log(response.data);
             this.polls = response.data;
             this.$emit("printPoll", this.polls[0].id);
             this.prevIndex = response.data.length - 1;
             if (response.data.length <= 1) this.showItem = false;
             if (response.data.length == 0) this.showActiveItem = false;
           }
-        })
-        .catch((error) => {
-          this.ShowError = true;
-          this.errorMgs = error.response.data.error;
         });
     },
     prevItem() {
