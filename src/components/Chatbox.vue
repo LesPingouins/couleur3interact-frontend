@@ -5,10 +5,7 @@
         <div v-for="message in messages" ref="messageContainers" class="pb-2">
           <div class="flex-shrink-1 message-box rounded">
             <i class="chatHour">{{ message.time }}&nbsp;</i>
-            <strong
-              v-bind:class="{ 'color-red': checkIsUser(message.username) }"
-              class="userChat"
-            >
+            <strong v-bind:class="{ 'color-red': checkIsUser(message.username) }" class="userChat">
               {{ message.username }}:
             </strong>
             <strong class="messageChat"> {{ message.message }} </strong>
@@ -19,13 +16,7 @@
 
     <div class="flex-grow-0border-top inputMessage">
       <div class="input-group">
-        <input
-          type="text"
-          @keyup.enter="onSubmit"
-          v-model="message"
-          class="form-control"
-          placeholder="Écrire"
-        />
+        <input type="text" @keyup.enter="onSubmit" v-model="message" class="form-control" placeholder="Écrire" />
       </div>
     </div>
   </div>
@@ -39,8 +30,8 @@ import store from "../store";
 
 export default {
   props: ["chat_id"],
-  setup() {},
-  created: function () {},
+  setup() { },
+  created: function () { },
   data() {
     return {
       messages: [],
@@ -149,9 +140,11 @@ input {
 button {
   opacity: 0%;
 }
+
 ::placeholder {
   color: var(--black) !important;
 }
+
 ::placeholder .form-control:focus {
   border: 2px solid var(--black);
   box-shadow: none;
