@@ -139,7 +139,7 @@ input {
   padding-left: 21px !important;
   width: 100% !important;
   background-color: var(--white) !important;
-  color: var(--white) !important;
+  color: var(--black) !important;
 }
 
 .inputMessage {
