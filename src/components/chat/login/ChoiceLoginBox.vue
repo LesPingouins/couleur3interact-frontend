@@ -4,7 +4,10 @@
       <div class="choiceLoginBox">
         <ButtonBackChat />
         <div class="d-flex">
-          <TitleChat text="Il faut vous connecter si vous voulez utiliser le chat !" style="margin-bottom: 50px" />
+          <TitleChat
+            text="Il faut vous connecter si vous voulez utiliser le chat !"
+            style="margin-bottom: 50px"
+          />
         </div>
         <div class="d-flex justify-content-leftr align-self-end">
           <TextChat text="Vous avez déjà un compte ?" />
@@ -12,7 +15,7 @@
         <div class="d-flex justify-content-center">
           <ButtonChat link="Connexion" buttonText="Se connecter" />
         </div>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" @click="goTo()">
           <ButtonAnonymous />
         </div>
 
@@ -34,6 +37,7 @@ import TitleChat from "../TitleChat.vue";
 import ButtonChat from "../ButtonChat.vue";
 import TextChat from "../TextChat.vue";
 import ButtonAnonymous from "../ButtonAnonymous.vue";
+import router from "../../../router";
 
 export default {
   components: {
@@ -42,6 +46,11 @@ export default {
     ButtonChat,
     TextChat,
     ButtonAnonymous,
+  },
+  methods: {
+    goTo() {
+      router.push("/");
+    },
   },
 };
 </script>

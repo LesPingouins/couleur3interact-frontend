@@ -10,7 +10,10 @@
           src="/src/assets/images/logo/logo_color-noir-rts-couleur3-horizontal.svg"
           alt=""
         />
-        <ButtonChat buttonText="Commencer l'expérience interact !" />
+        <ButtonChat
+          @click="goTo()"
+          buttonText="Commencer l'expérience interact !"
+        />
       </div>
     </div>
   </main>
@@ -20,12 +23,18 @@
 import ButtonBackChat from "../ButtonBackChat.vue";
 import TitleChat from "../TitleChat.vue";
 import ButtonChat from "../ButtonChat.vue";
+import router from "../../../router";
 
 export default {
   components: {
     ButtonBackChat,
     TitleChat,
     ButtonChat,
+  },
+  methods: {
+    goTo() {
+      router.push("/");
+    },
   },
 };
 </script>
