@@ -24,5 +24,6 @@ export default {
 <style scoped>
 p {
   font-family: var(--small-text);
+  color: var(--black);
 }
 </style>
