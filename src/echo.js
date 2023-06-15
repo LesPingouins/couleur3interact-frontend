@@ -13,7 +13,3 @@ window.Echo = new Echo({
   forceTLS: false,
   disableStats: true,
 });
-
-Pusher.log = function (message) {
-  window.console.log(message);
-};
