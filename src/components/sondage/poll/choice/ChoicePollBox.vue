@@ -4,7 +4,7 @@
       <div id="pollBox row">
         <QuestionText :texte="poll.question" />
         <div class="choixSondage row d-flex justify-content-between">
-          <div v-for="(answer, index) in answers" class="active col-6 mt-2">
+          <div v-for="(answer, index) in answers" class="active col-6">
             <ChoicePoll
               :key="index"
               @click="selectThis(index)"
@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
+.col-12 {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -103,6 +103,8 @@ export default {
 
 .choix {
   transition: all 0.3s ease;
+  margin: 2.5%;
+  width: 95%;
 }
 
 .choix:hover {
