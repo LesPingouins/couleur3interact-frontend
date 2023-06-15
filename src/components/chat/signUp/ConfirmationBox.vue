@@ -4,7 +4,7 @@
       <div id="confirmationBox">
         <ButtonBackChat />
         <TitleChat
-          text="MaxLaMenace, votre compte à bien été crée! Nous vous souhaitons la Bienvenue sur"
+          text="User, votre compte à bien été crée! Nous vous souhaitons la Bienvenue sur"
         />
         <img
           src="/src/assets/images/logo/logo_color-noir-rts-couleur3-horizontal.svg"

@@ -5,7 +5,11 @@
         <ButtonBackContest buttonText="Retour au choix de concours" />
         <TitleContest :text="this.contest.name_of" />
         <TextContest :text="this.contest.description" />
-        <InputContest ref="answer" :label="this.contest.question" placeholder="Saisissez votre réponse..." />
+        <InputContest
+          ref="answer"
+          :label="this.contest.question"
+          placeholder="Saisissez votre réponse..."
+        />
         <div class="d-flex justify-content-center">
           <ButtonContest @click="sendForm()" buttonText="Valider" />
         </div>
@@ -35,46 +39,37 @@ export default {
     return {
       contest: {},
       id: null,
-    }
+    };
   },
   methods: {
     getAContest() {
       this.id = router.currentRoute.value.query.id;
 
-      axios.get(
-        this.$store.state.backendUrl + "/contests/" + this.id,
-        {
+      axios
+        .get(this.$store.state.backendUrl + "/contests/" + this.id, {
           headers: {
             "Content-Type": "application/json",
           },
-        }
-      )
+        })
         .then((response) => {
           if (response.status === 200) {
             this.contest = response.data[0];
-            console.log(this.contest)
           }
-        })
-        .catch((error) => {
-          console.log(error);
-          this.ShowError = true;
-          this.errorMgs = error.response.data.error;
         });
     },
     sendForm() {
       router.push({
-        name: "ConcoursForm", //use name for router push
+        name: "ConcoursForm",
         params: {
           answer: this.$refs.answer.value,
           id: this.id,
-        }
+        },
       });
-
     },
   },
   mounted() {
     this.getAContest();
-  }
+  },
 };
 </script>
 

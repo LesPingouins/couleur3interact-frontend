@@ -49,10 +49,6 @@ export default {
     };
   },
   methods: {
-    logout() {
-      //this.$store.commit("Logout");
-      //this.$router.push("/login");
-    },
     changeActiveElement(id) {
       if (id === 1) {
         this.activeElement1 = true;

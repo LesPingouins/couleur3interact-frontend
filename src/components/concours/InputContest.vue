@@ -1,7 +1,12 @@
 <template>
   <div class="inputcontest-container">
     <label class="inputcontest-label">{{ label }}</label>
-    <input class="text-input" v-model="value" :placeholder="placeholder" />
+    <input
+      style="color: var(--black)"
+      class="text-input"
+      v-model="value"
+      :placeholder="placeholder"
+    />
   </div>
 </template>
 

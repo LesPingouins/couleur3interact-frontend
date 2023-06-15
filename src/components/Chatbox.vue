@@ -5,7 +5,12 @@
         <div v-for="message in messages" ref="messageContainers" class="pb-2">
           <div class="flex-shrink-1 message-box rounded">
             <i class="chatHour">{{ message.time }}&nbsp;</i>
-            <strong class="userChat"> {{ message.username }}: </strong>
+            <strong
+              v-bind:class="{ 'color-red': checkIsUser(message.username) }"
+              class="userChat"
+            >
+              {{ message.username }}:
+            </strong>
             <strong class="messageChat"> {{ message.message }} </strong>
           </div>
         </div>
@@ -37,7 +42,6 @@ export default {
   setup() {},
   created: function () {},
   data() {
-    console.log();
     return {
       messages: [],
       chat: [],
@@ -50,6 +54,9 @@ export default {
   methods: {
     getTime() {
       return moment().format("HH:mm");
+    },
+    checkIsUser(userToCheck) {
+      return userToCheck === store.state.username;
     },
 
     scrollToLastMessage() {
@@ -86,17 +93,10 @@ export default {
               }
             )
             .then((response) => {
-              console.log(response);
               if (response.status === 200) {
                 this.isSendingForm = false;
                 this.message = "";
               }
-            })
-            .catch((error) => {
-              console.log(error);
-              this.ShowError = true;
-              this.errorMgs = error.response.data.error;
-              this.isSendingForm = false;
             });
         } else {
           router.push("ChoixConnexion");
@@ -112,13 +112,6 @@ export default {
         this.scrollToLastMessage();
       });
     },
-  },
-  watch: {
-    // call the method if the chat_id changes in chat.vue
-    /*chat_id: {
-        handler: "getData",
-        immediate: true, // runs immediately with mount() instead of calling method on mount hook
-      },*/
   },
   mounted() {
     this.startWebSocket();
@@ -140,6 +133,10 @@ input {
   width: 100% !important;
   background-color: var(--white) !important;
   color: var(--black) !important;
+}
+
+.color-red {
+  color: var(--red) !important;
 }
 
 .inputMessage {

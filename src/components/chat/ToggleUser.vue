@@ -25,7 +25,6 @@ export default {
   methods: {
     toggleSwitch() {
       this.isChecked = !this.isChecked;
-      console.log(this.isChecked);
       return this.isChecked;
     },
   },

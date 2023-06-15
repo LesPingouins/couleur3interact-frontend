@@ -15,7 +15,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.container-fluid {
-}
-</style>
+<style scoped></style>

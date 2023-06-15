@@ -6,7 +6,6 @@
           v-if="isEventON"
           :event="this.event"
           class="popup d-flex justify-content-center"
-          timeLeft="25"
         />
         <ChatBox @renderChat="renderChat" />
       </div>

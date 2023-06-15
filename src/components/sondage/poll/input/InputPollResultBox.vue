@@ -74,13 +74,8 @@ export default {
         )
         .then((response) => {
           if (response.status === 200) {
-            console.log(response.data.answers);
             this.answers = response.data.answers;
           }
-        })
-        .catch((error) => {
-          this.ShowError = true;
-          this.errorMgs = error.response.data.error;
         });
     },
   },

@@ -17,8 +17,6 @@ export default {
   },
   computed: {
     backgroundStyle() {
-      console.log(this.isItemsEnabled);
-      console.log(this.backgroundColor);
       return `background: ${this.backgroundColor} `;
     },
   },

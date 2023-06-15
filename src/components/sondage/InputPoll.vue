@@ -1,6 +1,11 @@
 <template>
   <div class="inputpoll-container">
-    <input class="text-input" v-model="inputValue" :placeholder="placeholder" />
+    <input
+      style="color: var(--black)"
+      class="text-input"
+      v-model="inputValue"
+      :placeholder="placeholder"
+    />
   </div>
 </template>
 

@@ -109,10 +109,6 @@ export default {
       this.$emit("printPoll", this.polls[this.prevIndex].id);
     },
     nextItem() {
-      console.log(
-        this.prevIndex + "-" + this.activeIndex + "-" + this.nextIndex
-      );
-      console.log(this.polls.length);
       if (this.polls.length >= 3) {
         this.prevIndex = this.activeIndex;
         this.activeIndex = this.nextIndex;
@@ -128,7 +124,6 @@ export default {
           this.activeIndex = 1;
         }
       }
-      // Mettre à jour les index en fonction de l'élément actif
       this.prevIndex =
         (this.activeIndex - 1 + this.polls.length) % this.polls.length;
       this.nextIndex = (this.activeIndex + 1) % this.polls.length;
@@ -145,17 +140,11 @@ export default {
       this.$emit("printPoll", this.polls[event.target.dataset.index].id);
     },
     fetchPoll(pollId) {
-      axios
-        .get(this.$store.state.backendUrl + "/polls/" + pollId, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((response) => {})
-        .catch((error) => {
-          this.ShowError = true;
-          this.errorMgs = error.response.data.error;
-        });
+      axios.get(this.$store.state.backendUrl + "/polls/" + pollId, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
     },
   },
   mounted() {

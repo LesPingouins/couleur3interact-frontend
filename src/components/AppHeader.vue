@@ -33,7 +33,6 @@ export default {
   },
   watch: {
     "$store.state.username": function (val) {
-      console.log(val);
       if (store.state.username !== "") this.username = store.state.username;
       else this.username = "Me connecter";
     },

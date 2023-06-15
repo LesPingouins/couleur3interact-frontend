@@ -13,7 +13,7 @@
           text="Le gagnant du concours recevra toutes les infos nécessaires par mail le jour du tirage !"
         />
         <br />
-        <ButtonContest buttonText="Retourner au chat" />
+        <ButtonContest @click="goToChat()" buttonText="Retourner au chat" />
       </div>
     </div>
   </div>
@@ -23,12 +23,18 @@
 import ButtonContest from "../ButtonContest.vue";
 import TitleContest from "../TitleContest.vue";
 import ButtonBackContest from "../ButtonBackContest.vue";
+import router from "../../../router";
 
 export default {
   components: {
     ButtonContest,
     TitleContest,
     ButtonBackContest,
+  },
+  methods: {
+    goToChat() {
+      router.push("/");
+    },
   },
 };
 </script>

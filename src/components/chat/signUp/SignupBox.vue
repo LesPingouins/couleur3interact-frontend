@@ -17,7 +17,6 @@
           label="Confirmer le mot de passe *"
           placeholder="Saisissez votre mot de passe"
         />
-
         <ButtonChat style="margin-top: 10px" buttonText="Je crée mon compte" />
       </div>
     </div>

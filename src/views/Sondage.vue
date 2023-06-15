@@ -42,16 +42,10 @@ export default {
           },
         })
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             this.isPollsShow = true;
             this.poll = response.data[0];
           }
-        })
-        .catch((error) => {
-          this.isPollsShow = false;
-          this.ShowError = true;
-          this.errorMgs = error.response.data.error;
         });
     },
     disablePollsInactives() {
@@ -61,8 +55,9 @@ export default {
             "Content-Type": "application/json",
           },
         })
-        .catch((error) => {
-          this.ShowError = false;
+        .catch((response) => {
+          if (response.error === 418) {
+          }
         });
     },
   },

@@ -15,13 +15,13 @@
 
         <TitleChat text="Vos données personnelles" />
 
-        <InputUser title="Nom" value="Cuche" />
-        <InputUser title="Prénom" value="Maxime" />
-        <InputUser title="E-mail" value="max@max.com" />
-        <InputUser title="Adresse" value="Rue des Parcs 123" />
-        <InputUser title="NPA" value="2000" />
-        <InputUser title="Ville" value="Neuchâtel" />
-        <InputUser title="Téléphone" value="0791432547" />
+        <InputUser title="Nom" :value="this.user.lastname" />
+        <InputUser title="Prénom" :value="this.user.firstname" />
+        <InputUser title="E-mail" :value="this.user.email" />
+        <InputUser title="Adresse" :value="this.user.address" />
+        <InputUser title="NPA" :value="this.user.address_code" />
+        <InputUser title="Ville" :value="this.user.city" />
+        <InputUser title="Téléphone" :value="this.user.phone" />
 
         <TitleChat style="margin-top: 20px !important" text="Notifications" />
         <div class="d-flex toggleUser">
@@ -37,10 +37,7 @@
           <TextLinkChat linkText="Déconnexion" @click="logout()" link="#" />
         </div>
         <div class="d-flex justify-content-center">
-          <TextLinkChat
-            linkText="Supprimer mon compte"
-            link="https://www.example.com"
-          />
+          <TextLinkChat linkText="Supprimer mon compte" link="#" />
         </div>
       </div>
     </div>
@@ -56,6 +53,7 @@ import InputUser from "../InputUser.vue";
 import ToggleUser from "../ToggleUser.vue";
 import store from "../../../store";
 import router from "../../../router";
+import axios from "axios";
 
 export default {
   components: {
@@ -66,11 +64,32 @@ export default {
     InputUser,
     ToggleUser,
   },
+  data() {
+    return {
+      user: {},
+    };
+  },
   methods: {
+    getAUser() {
+      axios
+        .get(this.$store.state.backendUrl + "/users/" + this.$store.state.id, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            this.user = response.data;
+          }
+        });
+    },
     logout() {
       store.commit("logout");
       router.push("/");
     },
+  },
+  mounted() {
+    this.getAUser();
   },
 };
 </script>

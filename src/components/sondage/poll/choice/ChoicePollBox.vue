@@ -70,10 +70,6 @@ export default {
           if (response.status === 200) {
             this.answers = response.data;
           }
-        })
-        .catch((error) => {
-          this.ShowError = true;
-          this.errorMgs = error.response.data.error;
         });
     },
     selectThis(index) {
@@ -84,7 +80,6 @@ export default {
   },
   watch: {
     poll: function () {
-      console.log("test");
       this.getChoicesFromAPoll();
     },
   },

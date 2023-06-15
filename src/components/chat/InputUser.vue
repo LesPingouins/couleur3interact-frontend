@@ -6,6 +6,7 @@
         {{ value }}
       </p>
       <input
+        placeholder="test"
         v-if="isEditing"
         v-model="editedValue"
         @keydown.enter="saveValue"
@@ -63,6 +64,7 @@ export default {
 <style scoped>
 input {
   margin-bottom: 5px !important;
+  color: var(--black);
 }
 
 .input-container {
@@ -82,7 +84,7 @@ input {
 }
 
 .input-value {
-  color: #848484;
+  color: var(--black);
   width: 45vw;
   border-bottom: 2px solid var(--red);
   margin-bottom: 15px !important;
@@ -105,5 +107,6 @@ input {
   font-family: var(--medium-text);
   width: 20vw;
   color: var(--black);
+  margin-top: 20px;
 }
 </style>

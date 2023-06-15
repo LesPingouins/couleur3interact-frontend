@@ -24,30 +24,20 @@ export default {
   },
   methods: {
     getContests() {
-      axios.get(
-        this.$store.state.backendUrl + "/contests",
-        {
+      axios
+        .get(this.$store.state.backendUrl + "/contests", {
           headers: {
             "Content-Type": "application/json",
           },
-        }
-      )
+        })
         .then((response) => {
-          console.log(response.data);
           if (response.status === 200) {
             this.contests = response.data;
-            console.log(this.contests)
           }
-        })
-        .catch((error) => {
-          console.log(error);
-          this.ShowError = true;
-          this.errorMgs = error.response.data.error;
         });
     },
     goToContest(id) {
-
-      router.push("ConcoursQuestion/?id=" + id)
+      router.push("ConcoursQuestion/?id=" + id);
     },
   },
   mounted() {

@@ -26,10 +26,7 @@
             checkboxId="checkbox1"
             checkboxValue="option1"
           />
-          <TextLinkChat
-            linkText="Mot de passe oublié ?"
-            link="https://www.example.com"
-          />
+          <TextLinkChat linkText="Mot de passe oublié ?" link="#" />
         </div>
         <div class="pb-2 pt-4">
           <ButtonChat @click="submitForm" buttonText="Je me connecte!" />
@@ -72,8 +69,6 @@ export default {
   },
   methods: {
     submitForm() {
-      const form = document.querySelector("#form");
-      const formData = new FormData(form);
       const router = this.$router;
 
       axios
@@ -88,9 +83,6 @@ export default {
           }
         });
     },
-  },
-  mounted() {
-    console.log(this.$router);
   },
 };
 </script>

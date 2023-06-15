@@ -15,9 +15,17 @@
             <InputContest ref="city" label="Ville" placeholder="Ville..." />
           </div>
         </div>
-        <InputContest ref="phone" label="Téléphone" placeholder="Numéro de téléphone..." />
+        <InputContest
+          ref="phone"
+          label="Téléphone"
+          placeholder="Numéro de téléphone..."
+        />
         <div class="d-flex justify-content-center">
-          <ButtonContest @click="sendFormData()" class="ButtonContest" buttonText="Envoyer" />
+          <ButtonContest
+            @click="sendFormData()"
+            class="ButtonContest"
+            buttonText="Envoyer"
+          />
         </div>
       </div>
     </div>
@@ -44,36 +52,33 @@ export default {
     return {
       answer: "",
       id: "",
-    }
+    };
   },
   methods: {
     sendFormData() {
       axios
-        .post(import.meta.env.VITE_BACKEND_URL + "/contests/" + this.id,
-          {
-            user_id: store.state.id,
-            lastname: this.$refs.lastname.value,
-            firstname: this.$refs.firstname.value,
-            address: this.$refs.address.value,
-            address_code: this.$refs.address_code.value,
-            city: this.$refs.city.value,
-            phone: this.$refs.phone.value,
-            answer: this.answer,
-            event_id: this.id,
-          })
-        .then(function (response) {
-
-          if (response.status === 200) {
-            console.log(response)
-            //router.push({ name: 'Chat' })
-          }
+        .post(import.meta.env.VITE_BACKEND_URL + "/contests/" + this.id, {
+          user_id: store.state.id,
+          lastname: this.$refs.lastname.value,
+          firstname: this.$refs.firstname.value,
+          address: this.$refs.address.value,
+          address_code: this.$refs.address_code.value,
+          city: this.$refs.city.value,
+          phone: this.$refs.phone.value,
+          answer: this.answer,
+          event_id: this.id,
         })
-    }
+        .then(function (response) {
+          if (response.status === 200) {
+            router.push("/ConcoursQuestionConfirmation");
+          }
+        });
+    },
   },
   mounted() {
     this.answer = router.currentRoute.value.params.answer;
     this.id = router.currentRoute.value.params.id;
-  }
+  },
 };
 </script>
 

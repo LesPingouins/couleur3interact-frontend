@@ -1,6 +1,6 @@
 <template>
   <div v-if="this.isPopupShow" class="popup">
-    <div class="header" @click="togglePopup">
+    <div class="header" @click="togglePopup()">
       <div class="d-flex time">
         <span class="material-symbols-outlined"> hourglass_empty </span>
         <p>{{ this.counter }} {{ label }}</p>
@@ -9,7 +9,11 @@
       <TitleChat :text="event.question" />
       <div class="content" :class="{ expanded: isExpanded }">
         <TextChat :text="this.event.type_id === 1 ? 'Sondage' : 'Concours'" />
-        <ButtonPopup class="annuler" buttonText="Non merci" />
+        <ButtonPopup
+          @click="this.isPopupShow = false"
+          class="annuler"
+          buttonText="Non merci"
+        />
         <ButtonPopup
           class="valider"
           @click="goTo()"
@@ -42,10 +46,6 @@ export default {
   props: {
     event: {
       type: Object,
-      required: true,
-    },
-    timeLeft: {
-      type: Number,
       required: true,
     },
   },
@@ -95,19 +95,12 @@ export default {
         this.label = "Expiré";
         this.isPopupShow = false;
 
-        axios
-          .post(
-            import.meta.env.VITE_BACKEND_URL +
-              "/polls/" +
-              this.event.id +
-              "/inactive"
-          )
-          .then(function (response) {
-            if (response.status === 200) {
-              console.log(response);
-            }
-          });
-
+        axios.post(
+          import.meta.env.VITE_BACKEND_URL +
+            "/polls/" +
+            this.event.id +
+            "/inactive"
+        );
         this.stopInterval(this.interval);
       }
     },

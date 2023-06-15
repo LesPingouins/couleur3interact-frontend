@@ -5,6 +5,7 @@
       :type="type"
       :name="name"
       class="text-input"
+      style="color: var(--black) !important"
       v-model="value"
       :placeholder="placeholder"
     />
